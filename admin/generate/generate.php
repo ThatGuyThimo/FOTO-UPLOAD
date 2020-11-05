@@ -1,21 +1,28 @@
 <?php
-$eventname = $_GET["eventname"];
-$eventindex = "index.$eventname";
-$eventstyle = "style.$eventname";
+if (isset($_GET['submit'])) {
 
-$indextext = file_get_contents("test.html");
+    $eventname = $_GET["eventname"];
+    $eventindex = "index.$eventname";
+    $eventstyle = "style.$eventname";
+    $path = "../../login/events/$eventname/";
 
-$styletext = file_get_contents("style.css");
+    $indextext = file_get_contents("index.html");
 
-mkdir("../../login/events", $eventname)
+    $styletext = file_get_contents("style.css");
 
-$create_file = fopen("$eventindex.php", "w");
-fwrite($create_file, $indextext);
-fclose($create_file);
+    mkdir("$path");
 
-$create_style = fopen("$eventstyle.css", "w");
-fwrite($create_style, $styletext);
-fclose($create_style);
+    $create_file = fopen($path, "$eventindex.php", "w");
+    fwrite($create_file, $indextext);
+    fclose($create_file);
 
-header("location:$eventindex.php");
+    $create_style = fopen($path, "$eventstyle.css", "w");
+    fwrite($create_style, $styletext);
+    fclose($create_style);
+
+    // header("location:$path$eventindex.php");
+
+} else {
+    echo "<p>U komt niet van de generate form</p>";
+}
 ?>

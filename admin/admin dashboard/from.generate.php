@@ -13,7 +13,7 @@
 <table border="0">
     
         <tr>
-            <td>Username</td>
+            <td>Event name</td>
             <td><input type="text" name="eventname"></td>
         </tr>
         <tr>

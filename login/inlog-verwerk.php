@@ -9,28 +9,11 @@ if (isset($_POST['Inlog'])) {
     $Username = $_POST['Username'];
     $Password = sha1($_POST['Password']);
 
-    $admin = "SELECT * FROM Admin WHERE Username = '$Username' AND Password = '$Password'";
     $user = "SELECT * FROM User WHERE Username = '$Username' AND Password = '$Password'";
 
-    $resultadmin = mysqli_query($mysqli, $admin);
     $resultuser = mysqli_query($mysqli, $user);
-    // var_dump($mentor);
-    // var_dump($student);
-    // var_dump($resultaatmentor);
-    // var_dump($resultaatstudent);
-    if (mysqli_num_rows($resultadmin) > 0) {
 
-        $fetchadmin = mysqli_fetch_array($resultadmin);
-
-        $_SESSION['Username'] = $Username;
-        $_SESSION['level'] = $fetchadmin['level'];
-
-
-        header("Location:blank.php");
-        // var_dump($_SESSION['level']);
-        // var_dump($user['level']);
-
-    } else if(mysqli_num_rows($resultuser) > 0) {
+    if(mysqli_num_rows($resultuser) > 0) {
 
         $fetchuser = mysqli_fetch_array($resultuser);
 

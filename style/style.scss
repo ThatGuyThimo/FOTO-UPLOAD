@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+// ========================
+// variables
+// ========================
+@import './src/variables';
+@import './src/mixins';
+// ========================
+// components
+// ========================
+
+// ========================
+// pages
+// ========================

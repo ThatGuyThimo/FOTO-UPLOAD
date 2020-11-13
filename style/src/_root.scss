@@ -1,10 +1,32 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: #{Color(BackgroundLight)};
+    --text: #{Color(TextLight)};
+    // colors
+    // ===========================
+    --inputClr: #{Color(InputLight)};
+    --Pri-Color: #{Color(priClrLight)};
+    --Acc-Color1: #{Color(accClrLight1)};
+    --Acc-Color2: #{Color(accClrLight2)};
+  }
+  .rc-anchor-normal {
+    background: #f9f9f9 !important;
+    background-color: red;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #{Color(BackgroundDark)};
+    --text: #{Color(TextDark)};
+    // colors
+    // ===========================
+    --inputClr: #{Color(InputDark)};
+    --Pri-Color: #{Color(priClrDark)};
+    --Acc-Color1: #{Color(accClrDark1)};
+    --Acc-Color2: #{Color(accClrDark2)};
+  }
+  .rc-anchor-normal {
+    background: #222 !important;
+    background-color: red;
   }
 }

@@ -1,0 +1,32 @@
+// ===============================
+// Transtion
+// ===============================
+
+@mixin ColorTransition {
+  transition-property: all;
+  transition: $transitionDuration cubic-bezier(0.01, 0.78, 0.88, 0.81);
+}
+
+// ===============================
+// Button - .Btn
+// ===============================
+
+@mixin ButtonStyle($BGColor) {
+  background-color: $BGColor !important;
+  color: #f1f1f1;
+  border-radius: 52px;
+  border: none;
+  padding: $btnPadding;
+  margin: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: $btnFontSize;
+  font-weight: 800;
+  &:hover,
+  &:focus {
+    outline: none;
+    cursor: pointer;
+    filter: brightness(90%);
+  }
+}

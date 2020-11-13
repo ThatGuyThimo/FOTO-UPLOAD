@@ -7,7 +7,7 @@ if (isset($_GET['submit'])) {
     $path = "../login/groeps/$eventname/";
 
     // grab the content of the files for the event
-    $indextext = file_get_contents("index.html");
+    $indextext = file_get_contents("presets/index.html");
 
     // make the directory for the new event
     mkdir("$path");

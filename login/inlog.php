@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="nl">
 <head>
-    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="utf-8">
-    <title>Microsoft-Login</title>
+    <title>Foto-album-Login</title>
 </head>
 <body>
-<?php
-session_start();
-?>
 
 
  
@@ -16,7 +13,7 @@ session_start();
  
 <div class="inlogdiv">
 
-    <form method="post" action="inlog-verwerk.php">
+    <form method="POST" action="inlog.verwerk.php" enctype="multipart/form-data">
     
     <table border="0">
         
@@ -34,7 +31,9 @@ session_start();
                 <td>&nbsp;</td>
                 <td><input type="submit" name="Inlog" value="LOG IN"></td>
             </tr>
-
+            <tr>
+            <div class="g-recaptcha" data-sitekey="6Lcgd-IZAAAAALDXzqOGaBXWmJHCuA71_g3LiQ2T"></div>
+            </tr>
         </table>
     </form>
 </div>

@@ -38,14 +38,14 @@ $captcha_success = json_decode($verify);
         $_SESSION['Username'] = $Username;
         $_SESSION['level'] = $fetchuser['level'];
         $_SESSION['userID'] = $fetchuser['userID'];
-// send the user to the homepage
+// send the user to the team select
         header("Location:blank.php");
     } else if($captcha_success->success == false) {
-        // if captcha is false display this
+// if captcha is false display this
         echo "<p>De captcha is incorrect!</p>";
         echo "<p><a href='inlog.php'>Probeer opnieuw</a>";
     } else {
-        // if username and or password is incorrect display this
+// if username and or password is incorrect display this
         echo "<p>Naam en/of wachtwoord zijn onjuist.</p>";
         echo "<p><a href='inlog.php'>Probeer opnieuw</a>";
     }

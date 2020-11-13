@@ -1,0 +1,10 @@
+.Banner {
+    padding: $defPadding;
+    background-color: Color(BannerColor);
+  .header {
+    font-weight: 800;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-size: $defFontSize;
+  }
+}

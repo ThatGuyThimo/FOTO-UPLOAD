@@ -1,19 +1,20 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    font-family: sans-serif;
-    background-color: #f1f1f1;
+  margin: 0 auto;
+  font-family: sans-serif;
+  background-color: var(--background);
 }
 // ========================
 // variables
 // ========================
-@import './src/variables';
-@import './src/mixins';
+@import "./src/variables";
+@import "./src/root";
+@import "./src/mixins";
 // ========================
 // components
 // ========================

@@ -21,8 +21,10 @@
         }
         input {
           padding: $formPadding;
+          font-family: "Poppins", sans-serif;
           border: none;
           background-color: var(--inputClr);
+          color: var(--text);
         }
       }
       .formItem:nth-child(1) {

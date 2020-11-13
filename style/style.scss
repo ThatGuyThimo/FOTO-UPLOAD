@@ -10,7 +10,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  @include ColorTransition();
 }
 
 body {
@@ -30,3 +29,4 @@ body {
 // pages
 // ========================
 @import "./pages/inlog";
+@import "./pages/error";

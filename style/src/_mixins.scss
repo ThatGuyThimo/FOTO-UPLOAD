@@ -23,10 +23,17 @@
   font-family: "Poppins", sans-serif;
   font-size: $btnFontSize;
   font-weight: 800;
+  text-decoration: none;
   &:hover,
   &:focus {
     outline: none;
     cursor: pointer;
-    filter: brightness(90%);
   }
+}
+@mixin Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
 }

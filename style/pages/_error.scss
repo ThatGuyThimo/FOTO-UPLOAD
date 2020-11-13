@@ -1,0 +1,7 @@
+.error {
+    @include Center();
+    .Btn {
+        @include ButtonStyle(var(--Pri-Color));
+        width: max-content;
+    }
+}

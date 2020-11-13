@@ -33,8 +33,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition-property: all;
-  transition: 0.63s cubic-bezier(0.01, 0.78, 0.88, 0.81);
 }
 
 body {
@@ -83,8 +81,10 @@ body {
 
 .inlogdiv form .Form .formItem input {
   padding: 1rem 0.5rem;
+  font-family: "Poppins", sans-serif;
   border: none;
   background-color: var(--inputClr);
+  color: var(--text);
 }
 
 .inlogdiv form .Form .formItem:nth-child(1)::before {
@@ -132,11 +132,40 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.3em;
   font-weight: 800;
+  text-decoration: none;
 }
 
 .inlogdiv form .submitBtn .Btn_login:hover, .inlogdiv form .submitBtn .Btn_login:focus {
   outline: none;
   cursor: pointer;
-  filter: brightness(90%);
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.error .Btn {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 52px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3em;
+  font-weight: 800;
+  text-decoration: none;
+  width: max-content;
+}
+
+.error .Btn:hover, .error .Btn:focus {
+  outline: none;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

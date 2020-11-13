@@ -36,10 +36,9 @@ $captcha_success = json_decode($verify);
         $fetchuser = mysqli_fetch_array($resultuser);
 // save the username level and ID in the session
         $_SESSION['Username'] = $Username;
-        $_SESSION['level'] = $fetchuser['level'];
         $_SESSION['userID'] = $fetchuser['userID'];
 // send the user to the team select
-        header("Location:blank.php");
+        header("Location:groupselect.php");
     } else if($captcha_success->success == false) {
 // if captcha is false display this
         echo "<p>De captcha is incorrect!</p>";

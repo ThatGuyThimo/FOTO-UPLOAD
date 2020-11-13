@@ -1,0 +1,12 @@
+// @import "./variables";
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #{Color(BackgroundLight)};
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #{Color(BackgroundDark)};
+  }
+}

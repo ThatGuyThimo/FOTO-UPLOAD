@@ -1,8 +1,41 @@
 $colors: (
   "BackgroundLight": #f1f1f1,
   "BackgroundDark": #0f0f0f,
+  "TextLight": #0f0f0f,
+  "TextDark": #f1f1f1,
+  "InputLight": #e2e2e2,
+  "InputDark": #525252,
+  // colors
+  // ==============================
+  "BannerColor": #1a8269,
+  "priClrLight": #49dbb9,
+  "priClrDark": #297a67,
+  // accent colors
+  "accClrLight1": #FBE46E,
+  "accClrDark1": #713DE0,
+  "accClrLight2": #FB6EED,
+  "accClrDark2": #FF4C4C,
+  
 );
 
 @function Color($sort) {
   @return map-get($colors, $sort);
-};
+}
+
+// ======================
+// ======================
+// def = default == standaard
+// ======================
+// standard stuff
+// ======================
+$transitionDuration: 0.63s;
+$defPadding: 1rem 2rem;
+$btnPadding: 0.4rem 2rem;
+$formPadding: 1rem 0.5rem;
+
+//=======================
+// fonts stuff
+//=======================
+
+$defFontSize: 1.3em;
+$btnFontSize: 1.3em;

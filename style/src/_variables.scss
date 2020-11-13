@@ -1,0 +1,8 @@
+$colors: (
+  "BackgroundLight": #f1f1f1,
+  "BackgroundDark": #0f0f0f,
+);
+
+@function Color($sort) {
+  @return map-get($colors, $sort);
+};

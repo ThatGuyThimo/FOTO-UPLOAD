@@ -8,7 +8,9 @@
 <body>
   <?php
  // row['name'] = group name
-
+  if (true) {
+    # code...
+  }
   echo "<a herf='groups/" . $row['name'] . "'>" . $row['name'] .  "</a>";
   ?>
 </body>

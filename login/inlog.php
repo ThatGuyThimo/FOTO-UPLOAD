@@ -9,22 +9,26 @@
 </head>
 
 <body>
-    <h1>LOG IN:</h1>
+    <div class="Banner">
+        <div class="header">Inlog</div>
+    </div>
     <div class="inlogdiv">
         <form method="POST" action="inlog.verwerk.php" enctype="multipart/form-data">
-            <div class="formItem">
-                <label for="Username">Username</label>
-                <input type="text" name="Username">
+            <div class="Form">
+                <div class="formItem">
+                    <label for="Username">Username</label>
+                    <input type="text" name="Username">
+                </div>
+                <div class="formItem">
+                    <label for="Username">Password</label>
+                    <input type="password" name="Password" id="myInput">
+                </div>
+                <div class="formItem">
+                    <div class="g-recaptcha" data-sitekey="6Lcgd-IZAAAAALDXzqOGaBXWmJHCuA71_g3LiQ2T"></div>
+                </div>
             </div>
-            <div class="formItem">
-                <label for="Username">Password</label>
-                <input type="password" name="Password" id="myInput">
-            </div>
-            <div class="formItem">
-                <div class="g-recaptcha" data-sitekey="6Lcgd-IZAAAAALDXzqOGaBXWmJHCuA71_g3LiQ2T"></div>
-            </div>
-            <div class="formItem">
-                <input class="sumbitBtn Btn" type="submit" name="Inlog" value="LOG IN">
+            <div class="formItem submitBtn">
+                <input class="Btn_login" type="submit" name="Inlog" value="inlog">
             </div>
         </form>
     </div>

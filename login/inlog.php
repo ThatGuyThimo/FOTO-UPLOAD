@@ -10,17 +10,17 @@
 
 <body>
     <div class="Banner">
-        <div class="header">Inlog</div>
+        <div class="header">Inloggen</div>
     </div>
     <div class="inlogdiv">
         <form method="POST" action="inlog.verwerk.php" enctype="multipart/form-data">
             <div class="Form">
                 <div class="formItem">
-                    <label for="Username">Username</label>
+                    <label for="Username">Gebruikersnaam</label>
                     <input type="text" name="Username">
                 </div>
                 <div class="formItem">
-                    <label for="Username">Password</label>
+                    <label for="Username">Wachtwoord</label>
                     <input type="password" name="Password" id="myInput">
                 </div>
                 <div class="formItem">
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="formItem submitBtn">
-                <input class="Btn_login" type="submit" name="Inlog" value="inlog">
+                <input class="Btn_login" type="submit" name="Inlog" value="inloggen">
             </div>
         </form>
     </div>

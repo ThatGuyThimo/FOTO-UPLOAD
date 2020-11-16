@@ -34,11 +34,11 @@ require('../includes/config.inc.php');
 
   // loop door alle rijen dat heen
   while ($row = mysqli_fetch_array($result)) {
-    echo "<a href=" . $row['Groupname'] . ">" . $row['Groupname'] . "</a>";
+    echo "<a href=" . $row['Groupname'] . ">" . $row['Groupname'] . "</a><br>";
   }
   ?>
   <form action="" method="post">
-    <input type="text" placeholder="Groupname">
+    <input type="text" name="Groupname" placeholder="Groupname">
     <div class="list">
       <?php
       // maak een query voor de database
@@ -49,22 +49,30 @@ require('../includes/config.inc.php');
 
       // loop door alle rijen dat heen
       while ($row = mysqli_fetch_array($result)) {
-        echo "<button>" . $row['Username'] . "<input type='checkbox' name='checkbox" . $row['userID'] . "' id='" . $row['userID'] . "' value='true' ></button>";
+        echo "<button>" . $row['Username'] . "<input type='checkbox' name='member" . $row['userID'] . "' id='" . $row['userID'] . "' value='true' ></button>";
       }
       ?>
     </div>
-    <input type="submit" value="submit">
+    <input type="submit" name="submit" value="submit" id="submit">
   </form>
   <?php
   if (isset($_POST['submit'])) {
-    echo $_POST['checkbox'];
-    if ($_POST['checkbox'] == 'true') {
-      echo "true";
-    }
-    // $Groupname = $_POST['Groupname'];
-    // $groupQuery = "INSERT INTO groups VALUES ($userID,$Groupname,NULL)";
+    // make table groups
+    $Groupname = $_POST['Groupname'];
+    
+    $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL)";
 
-    // $execute = mysqli_query($mysqli, $groupQuery);
+    $execute = mysqli_query($mysqli, $groupQuery);
+    // get the group id
+    $getgroupID = "SELECT groupID FROM groups WHERE Groupname = '$Groupname'";
+
+    $getID = mysqli_query($mysqli, $getgroupID);
+
+    $groupID = mysqli_fetch_row($getID);
+    echo $groupID[0];
+    // $groupID[0]
+    // insert user into users with user id and group id
+
   }
   ?>
 </body>

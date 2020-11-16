@@ -1,18 +1,19 @@
 .inlogdiv {
-  margin: auto;
-  width: 100%;
   form {
     padding: $defPadding;
-    max-width: 768px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 75vh;
     justify-content: space-between;
     .Form {
+      position: relative;
       .formItem {
         display: flex;
         flex-direction: column;
         padding: $formPadding;
+        font-size: $defFontSize;
         label {
           margin: 0.2em 0;
           //   &::after {
@@ -21,6 +22,7 @@
         }
         input {
           padding: $formPadding;
+          font-size: $defFontSize;
           font-family: "Poppins", sans-serif;
           border: none;
           background-color: var(--inputClr);
@@ -31,6 +33,7 @@
         &::before {
           content: "";
           display: block;
+          position: fixed;
           position: absolute;
           width: 80%;
           max-width: 1920px;
@@ -45,6 +48,7 @@
         &::before {
           content: "";
           display: block;
+          position: fixed;
           position: absolute;
           width: 80%;
           max-width: 768px;

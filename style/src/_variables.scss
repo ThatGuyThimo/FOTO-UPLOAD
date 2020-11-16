@@ -1,21 +1,36 @@
 $colors: (
-  "BackgroundLight": #f1f1f1,
+  //=================================================
+  //                                        Dark mode
+  //=================================================
   "BackgroundDark": #0f0f0f,
-  "TextLight": #0f0f0f,
   "TextDark": #f1f1f1,
-  "InputLight": #e2e2e2,
   "InputDark": #525252,
   // colors
-  // ==============================
   "BannerColor": #1a8269,
-  "priClrLight": #49dbb9,
   "priClrDark": #297a67,
   // accent colors
-  "accClrLight1": #FBE46E,
-  "accClrDark1": #713DE0,
-  "accClrLight2": #FB6EED,
-  "accClrDark2": #FF4C4C,
-  
+  "accClrDark1": #713de0,
+  "accClrDark2": #ff4c4c,
+  // =====================-------------------------------------
+  // ================================================
+  //                                       Light Mode
+  // ================================================
+  "BackgroundLight": #f1f1f1,
+  "TextLight": #0f0f0f,
+  "InputLight": #e2e2e2,
+  // colors
+  "BannerColorLight": #1a8269,
+  "priClrLight": #49dbb9,
+  // accent colors
+  "accClrLight1": #fbe46e,
+  "accClrLight2": #fb6eed,
+  // =====================-------------------------------------s
+  //=================================================
+  //                                   Halloween mode
+  //=================================================
+  //=================================================
+  //                                       kerst mode
+  //=================================================
 );
 
 @function Color($sort) {
@@ -37,5 +52,5 @@ $formPadding: 1rem 0.5rem;
 // fonts stuff
 //=======================
 
-$defFontSize: 1.3em;
-$btnFontSize: 1.3em;
+$defFontSize: 1.3rem;
+$btnFontSize: 1.5rem;

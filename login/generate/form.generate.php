@@ -11,10 +11,10 @@
 <form method="get" action="generate.php">
 
 <table border="0">
-    <!-- fill in the name of the event -->
+    <!-- fill in the name of the groep -->
         <tr>
-            <td>Event name</td>
-            <td><input type="text" name="eventname"></td>
+            <td>Groep name</td>
+            <td><input type="text" name="groepname"></td>
         </tr>
         <tr>
     <!-- send the information to generate.php -->

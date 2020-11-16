@@ -58,7 +58,7 @@ if (isset($_POST['Inlog'])) {
                 <div class="header">ReCaptcha is incorrect!</div>
             </div>
             <div class="error">
-                <a class="Btn" href="inlog.php">Probeer het opnieuw</a>
+                <a class="Btn" onclick="window.history.back();">Probeer het opnieuw</a>
             </div>
         </body>
 
@@ -82,7 +82,7 @@ if (isset($_POST['Inlog'])) {
                 <div class="header">Gegevens zijn onjuist</div>
             </div>
             <div class="error">
-                <a class="Btn" href="inlog.php">Probeer het opnieuw</a>
+                <a class="Btn" onclick="window.history.back();">Probeer het opnieuw</a>
             </div>
         </body>
 

@@ -3,19 +3,19 @@
 if (isset($_GET['submit'])) {
 
     $groepname = $_GET["groepname"];
-    $groepindex = "index.$groepname";
+    $groupindex = "index.$groepname";
     $path = "../groeps/$groepname/";
 
-    // grab the content of the files for the groep
+    // grab the content of the files for the group
     $indextext = file_get_contents("presets/group.homepage.php");
     $eventtext = file_get_contents("presets/form.event.generate.php");
     $generate_event_text = file_get_contents("presets/event.generate.php");
 
-    // create the directory for the new groep
+    // create the directory for the new group
     mkdir("$path");
 
     // create index.html in the specified path
-    $create_file = fopen($path . "$groepindex.php", "w");
+    $create_file = fopen($path . "$groupindex.php", "w");
     fwrite($create_file, $indextext);
     fclose($create_file);
 
@@ -33,7 +33,7 @@ if (isset($_GET['submit'])) {
     mkdir("$path/events");
 
     // send the user to the new page
-    header("location:$path$groepindex.php");
+    header("location:$path$groupindex.php");
 
 } else {
     // if the user does not come from form.generate.php then send him an error

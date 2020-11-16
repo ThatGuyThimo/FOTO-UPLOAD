@@ -2,6 +2,7 @@
 <html lang="nl">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="utf-8">
     <title>Foto-album-Login</title>

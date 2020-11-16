@@ -25,7 +25,7 @@ require('../includes/config.inc.php');
   $userID = $_SESSION['userID'];
   $query = "SELECT Groupname 
               FROM groups
-              WHERE userID = (SELECT userID
+              WHERE userID IN (SELECT userID
                               FROM users
                               WHERE userID = $userID)";
 
@@ -38,7 +38,7 @@ require('../includes/config.inc.php');
   }
   ?>
   <form action="" method="post">
-    <input type="text" name="Groupname" placeholder="Groupname">
+    <input type="text" name="Groupname" placeholder="Groupname" require>
     <div class="list">
       <?php
       // maak een query voor de database
@@ -49,7 +49,7 @@ require('../includes/config.inc.php');
 
       // loop door alle rijen dat heen
       while ($row = mysqli_fetch_array($result)) {
-        echo "<button>" . $row['Username'] . "<input type='checkbox' name='member" . $row['userID'] . "' id='" . $row['userID'] . "' value='true' ></button>";
+        echo "<button>" . $row['Username'] . "<input type='checkbox' name='member[]' id='" . $row['userID'] . "' value='" . $row['userID'] . "'></button>";
       }
       ?>
     </div>
@@ -59,7 +59,7 @@ require('../includes/config.inc.php');
   if (isset($_POST['submit'])) {
     // make table groups
     $Groupname = $_POST['Groupname'];
-    
+
     $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL)";
 
     $execute = mysqli_query($mysqli, $groupQuery);
@@ -69,10 +69,15 @@ require('../includes/config.inc.php');
     $getID = mysqli_query($mysqli, $getgroupID);
 
     $groupID = mysqli_fetch_row($getID);
-    echo $groupID[0];
+    $GID = $groupID[0];
     // $groupID[0]
     // insert user into users with user id and group id
 
+    $array = $_POST['member'];
+    foreach ($array as $member => $value) {
+      $createUsers = "INSERT INTO users VALUE($value, $GID)";
+      $done = mysqli_query($mysqli, $createUsers);
+    }
   }
   ?>
 </body>

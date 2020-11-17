@@ -15,8 +15,7 @@ require('../includes/config.inc.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style/style.css">
-  <title>Groepen maken</title>
+  <title>Groups</title>
 </head>
 
 <body>
@@ -27,14 +26,15 @@ require('../includes/config.inc.php');
     <div class="scroll">
 
       <?php
-  // query every userid in relation with the group
-  $userID = $_SESSION['userID'];
-  $query = "SELECT Groupname 
+      // query every userid in relation with the group
+      $userID = $_SESSION['userID'];
+      $query = "SELECT Groupname 
               FROM groups
               WHERE groupID IN (SELECT groupID
                               FROM users
                               WHERE userID = $userID)";
-
+      //execute the query
+      $result = mysqli_query($mysqli, $query);
 
       //voer de query uit
       $result = mysqli_query($mysqli, $query);
@@ -78,9 +78,12 @@ require('../includes/config.inc.php');
       }
       ?>
     </div>
-    <div class="Item">
+    <<<<<<< HEAD <div class="Item">
       <input type="submit" name="submit" value="submit" id="submit" require="require">
-    </div>
+      </div>
+      =======
+      <input type="submit" name="submit" value="submit" id="submit" require>
+      >>>>>>> a2996d9c08bc066411e856358c6d6dae527ab493
   </form>
   <?php
   if (isset($_POST['submit'])) {

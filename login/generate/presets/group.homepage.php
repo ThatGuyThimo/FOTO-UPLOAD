@@ -1,15 +1,15 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="eng">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../../../style/style.css">
         <script src="script.js"></script>
-        <title>test site</title>
+        <title><?php echo $groupname;?></title>
     </head>
     <body>
-        <h1>test site om te kijken of generate.php werkt</h1>
+        <?php echo"<h1>" . $groupname . "</h1>";?>
+        
+        <!-- title(groupname) --><!-- menu somthing for to upload fotos and delete them -->
+        <!-- list of events -->
     </body>
 </html>

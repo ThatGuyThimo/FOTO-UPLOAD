@@ -44,7 +44,7 @@ require('../includes/config.inc.php');
       ?>
         <div class="groupItem">
           <div class="group">
-            <a href="<?php echo $row['Groupname'] ?>">
+            <a href="groups/<?php echo $row['Groupname'] ?>">
               <?php echo $row['Groupname'] ?>
             </a>
           </div>
@@ -79,7 +79,7 @@ require('../includes/config.inc.php');
       ?>
     </div>
     <div class="Item">
-      <input type="submit" name="submit" value="submit" id="submit">
+      <input type="submit" name="submit" value="submit" id="submit" require="require">
     </div>
   </form>
   <?php

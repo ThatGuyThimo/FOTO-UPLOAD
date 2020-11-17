@@ -70,10 +70,8 @@ require('../includes/config.inc.php');
       while ($row = mysqli_fetch_array($result)) {
       ?>
         <div class="userItem">
-          <button class="User">
-            <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
-            <?php echo $row['Username'] ?>
-          </button>
+          <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
+          <?php echo $row['Username'] ?>
         </div>
       <?php
       }

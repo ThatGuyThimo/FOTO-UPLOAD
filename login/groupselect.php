@@ -11,13 +11,11 @@ require('../includes/config.inc.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
   <?php
 
@@ -53,7 +51,7 @@ require('../includes/config.inc.php');
       }
       ?>
     </div>
-    <input type="submit" name="submit" value="submit" id="submit">
+    <input type="submit" name="submit" value="submit" id="submit" require>
   </form>
   <?php
   if (isset($_POST['submit'])) {
@@ -78,7 +76,8 @@ require('../includes/config.inc.php');
       $createUsers = "INSERT INTO users VALUE($value, $GID)";
       $done = mysqli_query($mysqli, $createUsers);
     }
-    require "//generate/generate.php";
+    //require "//generate/generate.php";
+    require "/xampp/htdocs/FOTO-UPLOAD/login/generate/generate.php";
   }
   ?>
 </body>

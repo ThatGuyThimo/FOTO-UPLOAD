@@ -15,7 +15,8 @@ require('../includes/config.inc.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groups</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <title>Groepen maken</title>
 </head>
 
 <body>
@@ -78,12 +79,9 @@ require('../includes/config.inc.php');
       }
       ?>
     </div>
-    <<<<<<< HEAD <div class="Item">
-      <input type="submit" name="submit" value="submit" id="submit" require="require">
-      </div>
-      =======
+    <div class="Item">
       <input type="submit" name="submit" value="submit" id="submit" require>
-      >>>>>>> a2996d9c08bc066411e856358c6d6dae527ab493
+    </div>
   </form>
   <?php
   if (isset($_POST['submit'])) {

@@ -15,12 +15,18 @@ require('../includes/config.inc.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groups</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <title>Groepen maken</title>
 </head>
 
 <body>
-  <?php
+  <div class="Banner">
+    <div class="header">Groep</div>
+  </div>
+  <div class="groupList">
+    <div class="scroll">
 
+      <?php
   // query every userid in relation with the group
   $userID = $_SESSION['userID'];
   $query = "SELECT Groupname 
@@ -29,18 +35,29 @@ require('../includes/config.inc.php');
                               FROM users
                               WHERE userID = $userID)";
 
-  //execute the query
-  $result = mysqli_query($mysqli, $query);
 
-  // display every group
-  while ($row = mysqli_fetch_array($result)) {
-    echo "<a href='groups/" . $row['Groupname'] . "'>" . $row['Groupname'] . "</a><br>";
-  }
-  ?>
+      //voer de query uit
+      $result = mysqli_query($mysqli, $query);
+
+      // loop door alle rijen dat heen
+      while ($row = mysqli_fetch_array($result)) {
+      ?>
+        <div class="groupItem">
+          <div class="group">
+            <a href="<?php echo $row['Groupname'] ?>">
+              <?php echo $row['Groupname'] ?>
+            </a>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
+    </div>
+  </div>
   <form action="" method="post">
     <!-- input the name of the group -->
     <input type="text" name="Groupname" placeholder="Groupname" require>
-    <div class="list">
+    <div class="userList">
       <?php
       // query all users
       $query = "SELECT userID, Username FROM user";
@@ -50,11 +67,20 @@ require('../includes/config.inc.php');
 
       // show all the users
       while ($row = mysqli_fetch_array($result)) {
-        echo "<button>" . $row['Username'] . "<input type='checkbox' name='member[]' id='" . $row['userID'] . "' value='" . $row['userID'] . "'></button>";
+      ?>
+        <div class="userItem">
+          <button class="User">
+            <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
+            <?php echo $row['Username'] ?>
+          </button>
+        </div>
+      <?php
       }
       ?>
     </div>
-    <input type="submit" name="submit" value="submit" id="submit" require>
+    <div class="Item">
+      <input type="submit" name="submit" value="submit" id="submit">
+    </div>
   </form>
   <?php
   if (isset($_POST['submit'])) {

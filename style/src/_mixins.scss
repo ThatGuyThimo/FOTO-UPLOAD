@@ -14,7 +14,7 @@
 @mixin ButtonStyle($BGColor) {
   background-color: $BGColor !important;
   color: #f1f1f1;
-  border-radius: 100px;
+  border-radius: $btnRadius;
   border: none;
   padding: $btnPadding;
   margin: auto;

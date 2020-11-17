@@ -44,6 +44,14 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
 .Banner {
   padding: 1rem 2rem;
   background-color: #1a8269;
@@ -53,7 +61,7 @@ body {
   font-weight: 800;
   color: #f1f1f1;
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 .inlogdiv form {
@@ -74,7 +82,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .inlogdiv form .Form .formItem label {
@@ -83,7 +91,7 @@ body {
 
 .inlogdiv form .Form .formItem input {
   padding: 1rem 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
   border: none;
   background-color: var(--inputClr);
@@ -173,5 +181,30 @@ body {
 .error .Btn:hover, .error .Btn:focus {
   outline: none;
   cursor: pointer;
+}
+
+.groupList {
+  margin: 1rem 1.5rem;
+}
+
+.groupList .scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 460px;
+  margin-top: 1.8rem;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.groupList .scroll .groupItem {
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  background-color: var(--Pri-Color);
+}
+
+.groupList .scroll .groupItem .group a {
+  color: var(--text);
 }
 /*# sourceMappingURL=style.css.map */

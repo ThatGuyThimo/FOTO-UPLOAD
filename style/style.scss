@@ -21,6 +21,13 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
 // ========================
 // components
 // ========================
@@ -31,3 +38,4 @@ body {
 // ========================
 @import "./pages/inlog";
 @import "./pages/error";
+@import "./pages/groupselect";

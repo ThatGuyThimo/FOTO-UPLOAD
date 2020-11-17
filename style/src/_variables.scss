@@ -8,6 +8,7 @@ $colors: (
   // colors
   "BannerColor": #1a8269,
   "priClrDark": #297a67,
+  "SecClrLight": #4c5657,
   // accent colors
   "accClrDark1": #713de0,
   "accClrDark2": #ff4c4c,
@@ -21,6 +22,7 @@ $colors: (
   // colors
   "BannerColorLight": #1a8269,
   "priClrLight": #49dbb9,
+  "SecClrLight": #ECF8F5,
   // accent colors
   "accClrLight1": #fbe46e,
   "accClrLight2": #fb6eed,
@@ -45,12 +47,18 @@ $colors: (
 // ======================
 $transitionDuration: 0.63s;
 $defPadding: 1rem 2rem;
+$defMargin: 1rem 1.5rem;
 $btnPadding: 0.4rem 2rem;
 $formPadding: 1rem 0.5rem;
+
+$defRadius: 16px;
+$btnRadius: 100px;
+$inputRadius: 12px;
 
 //=======================
 // fonts stuff
 //=======================
 
-$defFontSize: 1.3rem;
+$defFontSize: 1.2rem;
+$BannerFontSize: 1.6rem;
 $btnFontSize: 1.5rem;

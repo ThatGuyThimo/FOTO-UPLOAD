@@ -78,6 +78,7 @@ require('../includes/config.inc.php');
       $createUsers = "INSERT INTO users VALUE($value, $GID)";
       $done = mysqli_query($mysqli, $createUsers);
     }
+    require "//generate/generate.php";
   }
   ?>
 </body>

@@ -1,15 +1,15 @@
 <?php
-// check if user comes from form.generate.php
+// check if user comes the from
 if (isset($_GET['submit'])) {
 
-    $groepname = $_GET["groepname"];
-    $groupindex = "index.$groepname";
-    $path = "../groeps/$groepname/";
+    $groupname = $_POST["Groupname"];
+    $groupindex = "index.$groupname";
+    $path = "/groeps/$groupname/";
 
     // grab the content of the files for the group
-    $indextext = file_get_contents("presets/group.homepage.php");
-    $eventtext = file_get_contents("presets/form.event.generate.php");
-    $generate_event_text = file_get_contents("presets/event.generate.php");
+    $indextext = file_get_contents("generate/presets/group.homepage.php");
+    $eventtext = file_get_contents("generate/presets/form.event.generate.php");
+    $generate_event_text = file_get_contents("generate/presets/event.generate.php");
 
     // create the directory for the new group
     mkdir("$path");
@@ -35,8 +35,8 @@ if (isset($_GET['submit'])) {
     // send the user to the new page
     header("location:$path$groupindex.php");
 
-} else {
-    // if the user does not come from form.generate.php then send him an error
-    echo "<p>U komt niet van de groepmaker</p>";
-}
+  } else {
+    // if the user does not come from the form then send him an error
+    echo "<p>Error unknown form post submit.</p>";
+  }
 ?>

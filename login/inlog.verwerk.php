@@ -52,7 +52,7 @@
             // if captcha is false display this
     ?>
             <div class="Banner">
-                <div class="header">Inloggen</div>
+                <div class="header">Captcha is mislukt</div>
             </div>
             <div class="error">
                 <a class="Btn" onclick="window.history.back();">Probeer het opnieuw</a>

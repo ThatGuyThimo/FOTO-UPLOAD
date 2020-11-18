@@ -6,7 +6,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="utf-8">
     <title>Foto-album-Login</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/output/style.css">
 </head>
 
 <body>

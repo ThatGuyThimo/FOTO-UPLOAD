@@ -6,6 +6,7 @@
     // ===========================
     --inputClr: #{Color(InputLight)};
     --Pri-Color: #{Color(priClrLight)};
+    --Input-Color: #{Color(SecClrLight)};
     --Acc-Color1: #{Color(accClrLight1)};
     --Acc-Color2: #{Color(accClrLight2)};
   }
@@ -22,7 +23,7 @@
     // ===========================
     --inputClr: #{Color(InputDark)};
     --Pri-Color: #{Color(priClrDark)};
-    --Input-Color: #{Color(secClrDark)};
+    --Input-Color: #{Color(SecClrDark)};
     --Acc-Color1: #{Color(accClrDark1)};
     --Acc-Color2: #{Color(accClrDark2)};
   }

@@ -15,7 +15,7 @@ require('../includes/config.inc.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/output/style.css">
   <title>Groepen maken</title>
 </head>
 
@@ -56,29 +56,32 @@ require('../includes/config.inc.php');
     </div>
   </div>
   <form action="" method="post">
-    <!-- input the name of the group -->
-    <input type="text" name="Groupname" placeholder="Groupname" require>
-    <div class="userList">
-      <?php
+    <div class="aanmaak">
+
+      <!-- input the name of the group -->
+      <input class="GroupInput" type="text" name="Groupname" placeholder="Groepnaam" require="require">
+      <div class="userList">
+        <?php
       // query all users
       $query = "SELECT userID, Username FROM user";
-
+      
       //execute the query
       $result = mysqli_query($mysqli, $query);
-
+      
       // show all the users
       while ($row = mysqli_fetch_array($result)) {
-      ?>
+        ?>
         <div class="userItem">
           <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
           <?php echo $row['Username'] ?>
         </div>
-      <?php
+        <?php
       }
       ?>
     </div>
+  </div>
     <div class="Item">
-      <input type="submit" name="submit" value="submit" id="submit" require>
+      <input type="submit" name="submit" value="Groep aanmaken" id="submit" require>
     </div>
   </form>
   <?php

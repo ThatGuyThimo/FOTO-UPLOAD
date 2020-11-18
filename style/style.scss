@@ -13,7 +13,7 @@
 }
 
 body {
-  margin: 0 auto;
+  margin: 1px auto;
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--text);
@@ -27,7 +27,9 @@ a {
 li {
   list-style-type: none;
 }
-
+input {
+  border-radius: $inputRadius;
+}
 // ========================
 // components
 // ========================

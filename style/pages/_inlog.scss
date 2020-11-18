@@ -21,12 +21,8 @@
           //   }
         }
         input {
-          padding: $formPadding;
-          font-size: $defFontSize;
-          font-family: "Poppins", sans-serif;
-          border: none;
-          background-color: var(--inputClr);
-          color: var(--text);
+          @include InputStyle;
+          background-color: var(--inputClr) !important;
         }
       }
       .formItem:nth-child(1) {

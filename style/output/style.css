@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f1f1f1;
+    --text: #0f0f0f;
+    --inputClr: #e2e2e2;
+    --Pri-Color: #49dbb9;
+    --Input-Color: #ECF8F5;
+    --Acc-Color1: #fbe46e;
+    --Acc-Color2: #fb6eed;
+  }
+
+  .rc-anchor-normal {
+    background: #f9f9f9 !important;
+    background-color: red;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f0f0f;
+    --text: #f1f1f1;
+    --inputClr: #525252;
+    --Pri-Color: #297a67;
+    --Input-Color: #4c5657;
+    --Acc-Color1: #713de0;
+    --Acc-Color2: #ff4c4c;
+  }
+
+  .rc-anchor-normal {
+    background: #222 !important;
+    background-color: red;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1px auto;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input {
+  border-radius: 8px;
+}
+
+.Banner {
+  padding: 1rem 2rem;
+  background-color: #1a8269;
+}
+.Banner .header {
+  font-weight: 800;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.inlogdiv form {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: space-between;
+}
+.inlogdiv form .Form {
+  position: relative;
+}
+.inlogdiv form .Form .formItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+}
+.inlogdiv form .Form .formItem label {
+  margin: 0.2em 0;
+}
+.inlogdiv form .Form .formItem input {
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: var(--inputClr);
+  color: var(--text);
+  width: 100%;
+  background-color: var(--inputClr) !important;
+}
+.inlogdiv form .Form .formItem:nth-child(1)::before {
+  content: "";
+  display: block;
+  position: fixed;
+  position: absolute;
+  width: 80%;
+  max-width: 1920px;
+  height: 22px;
+  background-color: var(--Acc-Color1);
+  border-radius: 52px;
+  z-index: -3;
+  transform: translate(70%, 105%);
+}
+.inlogdiv form .Form .formItem:nth-child(2)::before {
+  content: "";
+  display: block;
+  position: fixed;
+  position: absolute;
+  width: 80%;
+  max-width: 768px;
+  height: 22px;
+  background-color: var(--Acc-Color2);
+  border-radius: 52px;
+  z-index: -3;
+  bottom: 30%;
+  left: -20%;
+}
+.inlogdiv form .submitBtn {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+.inlogdiv form .submitBtn .Btn_login {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.inlogdiv form .submitBtn .Btn_login:hover, .inlogdiv form .submitBtn .Btn_login:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  height: 100vh;
+}
+.error .Btn {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  width: max-content;
+}
+.error .Btn:hover, .error .Btn:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.groupList {
+  margin: 1rem 1.5rem;
+}
+.groupList .scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 270px;
+  margin-top: 1.8rem;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: start;
+}
+.groupList .scroll .groupItem {
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  background-color: var(--Input-Color);
+}
+.groupList .scroll .groupItem .group a {
+  color: var(--text);
+}
+
+form {
+  margin: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 32vh;
+}
+form .aanmaak .GroupInput {
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: var(--inputClr);
+  color: var(--text);
+  width: 100%;
+}
+form .Item input {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+form .Item input:hover, form .Item input:focus {
+  outline: none;
+  cursor: pointer;
+}

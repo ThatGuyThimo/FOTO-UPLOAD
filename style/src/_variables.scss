@@ -8,7 +8,7 @@ $colors: (
   // colors
   "BannerColor": #1a8269,
   "priClrDark": #297a67,
-  "SecClrLight": #4c5657,
+  "SecClrDark": #4c5657,
   // accent colors
   "accClrDark1": #713de0,
   "accClrDark2": #ff4c4c,
@@ -46,14 +46,22 @@ $colors: (
 // standard stuff
 // ======================
 $transitionDuration: 0.63s;
-$defPadding: 1rem 2rem;
+// Margin
+// ---------------------
 $defMargin: 1rem 1.5rem;
+$formMargin: 1rem 1.5rem;
+// padding
+// ---------------------
+$defPadding: 1rem 2rem;
 $btnPadding: 0.4rem 2rem;
 $formPadding: 1rem 0.5rem;
+$inputPadding: 1.5rem .5rem;
 
+// Border-Radius
+// ---------------------
 $defRadius: 16px;
 $btnRadius: 100px;
-$inputRadius: 12px;
+$inputRadius: 8px;
 
 //=======================
 // fonts stuff

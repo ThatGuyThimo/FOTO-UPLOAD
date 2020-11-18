@@ -1,19 +1,20 @@
 .groupList {
   margin: $defMargin;
   .scroll {
-      overflow-x: hidden;
-      overflow-y: auto;
-      height: 460px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 270px;
     //   margin: 1rem 0;
-      margin-top: 1.8rem;
-      scrollbar-width: thin;
-      display: flex;
-      flex-direction: column-reverse;
+    margin-top: 1.8rem;
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
     .groupItem {
       border-radius: $defRadius;
       padding: $defPadding;
       margin: 1rem 0;
-      background-color: var(--Pri-Color);
+      background-color: var(--Input-Color);
       .group {
         a {
           color: var(--text);
@@ -22,7 +23,24 @@
     }
   }
 }
-.userItem {
-  .User {
+form {
+  margin: $formMargin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 32vh;
+  .aanmaak {
+    .GroupInput {
+      @include InputStyle;
+    }
+  }
+  .Item {
+    input {
+      @include ButtonStyle(var(--Pri-Color));
+    }
   }
 }
+// .userItem {
+//   .User {
+//   }
+// }

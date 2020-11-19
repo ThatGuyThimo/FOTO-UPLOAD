@@ -1,8 +1,8 @@
 .error {
-    @include Center();
-    height: 100vh;
-    .Btn {
-        @include ButtonStyle(var(--Pri-Color));
-        width: max-content;
-    }
+  @include Center();
+  height: 100vh;
+  .Btn {
+    @include ButtonStyle(var(--Pri-Color));
+    width: max-content;
+  }
 }

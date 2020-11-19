@@ -10,13 +10,13 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: start;
-    .groupItem {
-      border-radius: $defRadius;
-      padding: $defPadding;
-      margin: 1rem 0;
-      background-color: var(--Input-Color);
-      .group {
-        a {
+    a {
+      .groupItem {
+        border-radius: $defRadius;
+        padding: $defPadding;
+        margin: 1rem 0;
+        background-color: var(--Input-Color);
+        .group {
           color: var(--text);
         }
       }

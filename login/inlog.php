@@ -13,6 +13,7 @@
     <div class="Banner">
         <div class="header">Inloggen</div>
     </div>
+    <main>
     <div class="inlogdiv">
         <form method="POST" action="inlog.verwerk.php" enctype="multipart/form-data">
             <div class="Form">
@@ -33,8 +34,7 @@
             </div>
         </form>
     </div>
-
-
+    </main>
 </body>
 
 

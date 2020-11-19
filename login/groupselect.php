@@ -23,6 +23,7 @@ require('../includes/config.inc.php');
   <div class="Banner">
     <div class="header">Groep</div>
   </div>
+  <main>
   <div class="groupList">
     <div class="scroll">
 
@@ -43,13 +44,13 @@ require('../includes/config.inc.php');
       // loop door alle rijen dat heen
       while ($row = mysqli_fetch_array($result)) {
       ?>
+            <a href="groups/<?php echo $row['Groupname'] ?>">
         <div class="groupItem">
           <div class="group">
-            <a href="groups/<?php echo $row['Groupname'] ?>">
               <?php echo $row['Groupname'] ?>
-            </a>
           </div>
         </div>
+            </a>
       <?php
       }
       ?>
@@ -79,11 +80,12 @@ require('../includes/config.inc.php');
       }
       ?>
     </div>
-  </div>
     <div class="Item">
       <input type="submit" name="submit" value="Groep aanmaken" id="submit" require>
     </div>
   </form>
+
+  </main>
   <?php
   if (isset($_POST['submit'])) {
 

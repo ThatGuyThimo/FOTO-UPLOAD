@@ -60,7 +60,7 @@ require('../includes/config.inc.php');
     <div class="aanmaak">
 
       <!-- input the name of the group -->
-      <input class="GroupInput" type="text" name="Groupname" placeholder="Groepnaam" require="require">
+      <input class="GroupInput" type="text" name="Groupname" placeholder="Groepnaam" required="required">
       <div class="userList">
         <?php
       // query all users
@@ -73,7 +73,7 @@ require('../includes/config.inc.php');
       while ($row = mysqli_fetch_array($result)) {
         ?>
         <div class="userItem">
-          <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
+          <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>" required="required">
           <?php echo $row['Username'] ?>
         </div>
         <?php
@@ -81,7 +81,7 @@ require('../includes/config.inc.php');
       ?>
     </div>
     <div class="Item">
-      <input type="submit" name="submit" value="Groep aanmaken" id="submit" require>
+      <input type="submit" name="submit" value="Groep aanmaken" id="submit">
     </div>
   </form>
 

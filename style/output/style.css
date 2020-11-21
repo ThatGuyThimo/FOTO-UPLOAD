@@ -248,24 +248,27 @@ input {
 
 .groupList {
   margin: 1rem 1.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 370px;
+  scrollbar-width: thin;
 }
 
 .groupList .scroll {
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 270px;
-  margin-top: 1.8rem;
-  scrollbar-width: thin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+}
+
+.groupList .scroll a {
+  padding: 0 1em;
 }
 
 .groupList .scroll a .groupItem {
@@ -280,7 +283,7 @@ input {
 }
 
 form {
-  margin: 1rem 1.5rem;
+  margin: 3rem 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,6 +305,10 @@ form .aanmaak .GroupInput {
   background-color: var(--inputClr);
   color: var(--text);
   width: 100%;
+}
+
+form .Item {
+  margin: 1em 0;
 }
 
 form .Item input {

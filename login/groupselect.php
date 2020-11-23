@@ -24,66 +24,68 @@ require('../includes/config.inc.php');
     <div class="header">Groeps</div>
   </div>
   <main>
-  <div class="groupList">
-    <div class="scroll">
+    <div class="groupList">
+      <div class="scroll">
 
-      <?php
-      // query every userid in relation with the group
-      $userID = $_SESSION['userID'];
-      $query = "SELECT Groupname 
+        <?php
+        // query every userid in relation with the group
+        $userID = $_SESSION['userID'];
+        $query = "SELECT Groupname 
               FROM groups
               WHERE groupID IN (SELECT groupID
                               FROM users
                               WHERE userID = $userID)";
-      //execute the query
-      $result = mysqli_query($mysqli, $query);
+        //execute the query
+        $result = mysqli_query($mysqli, $query);
 
-      //voer de query uit
-      $result = mysqli_query($mysqli, $query);
+        //voer de query uit
+        $result = mysqli_query($mysqli, $query);
 
-      // loop door alle rijen dat heen
-      while ($row = mysqli_fetch_array($result)) {
-      ?>
-            <a href="groups/<?php echo $row['Groupname'] ?>">
-        <div class="groupItem">
-          <div class="group">
-              <?php echo $row['Groupname'] ?>
-          </div>
-        </div>
-            </a>
-      <?php
-      }
-      ?>
-    </div>
-  </div>
-  <form action="" method="post">
-    <div class="aanmaak">
-
-      <!-- input the name of the group -->
-      <input class="GroupInput" type="text" name="Groupname" placeholder="Groepnaam" required="required">
-      <div class="userList">
-        <?php
-      // query all users
-      $query = "SELECT userID, Username FROM user";
-      
-      //execute the query
-      $result = mysqli_query($mysqli, $query);
-      
-      // show all the users
-      while ($row = mysqli_fetch_array($result)) {
+        // loop door alle rijen dat heen
+        while ($row = mysqli_fetch_array($result)) {
         ?>
-        <div class="userItem">
-          <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>" required="required">
-          <?php echo $row['Username'] ?>
-        </div>
+          <a href="groups/<?php echo $row['Groupname'] ?>">
+            <div class="groupItem">
+              <div class="group">
+                <?php echo $row['Groupname'] ?>
+              </div>
+            </div>
+          </a>
         <?php
-      }
-      ?>
+        }
+        ?>
+      </div>
     </div>
-    <div class="Item">
-      <input type="submit" name="submit" value="Groep aanmaken" id="submit">
-    </div>
-  </form>
+    <form action="" method="post">
+      <div class="aanmaak">
+
+        <!-- input the name of the group -->
+        <input class="GroupInput" type="text" name="Groupname" placeholder="Groepnaam" required="required">
+        <div class="userList">
+          <?php
+          // query all users
+          $query = "SELECT userID, Username FROM user";
+
+          //execute the query
+          $result = mysqli_query($mysqli, $query);
+
+          // show all the users
+          while ($row = mysqli_fetch_array($result)) {
+          ?>
+            <div class="userItem">
+              <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>" required="required">
+              <label for="<?php echo $row['userID'] ?>">
+                <?php echo $row['Username'] ?>
+              </label>
+            </div>
+          <?php
+          }
+          ?>
+        </div>
+        <div class="Item">
+          <input type="submit" name="submit" value="Groep aanmaken" id="submit">
+        </div>
+    </form>
 
   </main>
   <?php

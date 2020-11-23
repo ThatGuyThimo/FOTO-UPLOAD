@@ -1,6 +1,6 @@
 .Banner {
     padding: $defPadding;
-    background-color: Color(BannerColor);
+    background-color: var(--bannerColor);
   .header {
     font-weight: 800;
     color: #f1f1f1;

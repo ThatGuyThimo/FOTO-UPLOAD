@@ -2,10 +2,13 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: #f1f1f1;
+    --bannerColor: #1a8269;
     --text: #0f0f0f;
     --inputClr: #e2e2e2;
     --Pri-Color: #49dbb9;
-    --Input-Color: #ECF8F5;
+    --Tri-Color: #2f7ee6;
+    --Tri-Color-Select: #1b61bd;
+    --Input-Color: #ecf8f5;
     --Acc-Color1: #fbe46e;
     --Acc-Color2: #fb6eed;
   }
@@ -18,9 +21,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f0f0f;
+    --bannerColor: #1d483e;
     --text: #f1f1f1;
     --inputClr: #525252;
     --Pri-Color: #297a67;
+    --Tri-Color: #9a28e8;
+    --Tri-Color-Select: #8017c7;
     --Input-Color: #4c5657;
     --Acc-Color1: #713de0;
     --Acc-Color2: #ff4c4c;
@@ -34,8 +40,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -72,7 +77,7 @@ input {
 
 .Banner {
   padding: 1rem 2rem;
-  background-color: #1a8269;
+  background-color: var(--bannerColor);
 }
 
 .Banner .header {
@@ -86,17 +91,10 @@ input {
   padding: 1rem 2rem;
   margin: 0 auto;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 75vh;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .inlogdiv form .Form {
@@ -104,13 +102,8 @@ input {
 }
 
 .inlogdiv form .Form .formItem {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 1rem 0.5rem;
   font-size: 1.2rem;
 }
@@ -141,8 +134,7 @@ input {
   background-color: var(--Acc-Color1);
   border-radius: 52px;
   z-index: -3;
-  -webkit-transform: translate(70%, 105%);
-          transform: translate(70%, 105%);
+  transform: translate(70%, 105%);
 }
 
 .inlogdiv form .Form .formItem:nth-child(2)::before {
@@ -161,8 +153,6 @@ input {
 }
 
 .inlogdiv form .submitBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin: 0 auto;
@@ -192,22 +182,14 @@ input {
 @media screen and (min-width: 1280px) {
   .inlogdiv form .submitBtn .Btn_login {
     margin: 0 auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }
 
 .error {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 100%;
   height: 100vh;
@@ -227,8 +209,6 @@ input {
   font-size: 1.5rem;
   font-weight: 800;
   text-decoration: none;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -240,8 +220,6 @@ input {
 @media screen and (min-width: 1280px) {
   .error .Btn {
     margin: 0 auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -250,21 +228,14 @@ input {
   margin: 1rem 1.5rem;
   overflow-x: hidden;
   overflow-y: auto;
-  max-height: 370px;
+  max-height: 500px;
   scrollbar-width: thin;
 }
 
 .groupList .scroll {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  justify-content: start;
+  flex-direction: column-reverse;
 }
 
 .groupList .scroll a {
@@ -284,16 +255,9 @@ input {
 
 form {
   margin: 3rem 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   height: 32vh;
 }
 
@@ -305,6 +269,35 @@ form .aanmaak .GroupInput {
   background-color: var(--inputClr);
   color: var(--text);
   width: 100%;
+}
+
+form .aanmaak .userList {
+  margin: 1em 0;
+  display: inline-flex;
+  width: 100%;
+}
+
+form .aanmaak .userList .userItem {
+  margin-right: 1em;
+}
+
+form .aanmaak .userList .userItem label {
+  cursor: pointer;
+  user-select: none;
+  margin: 4em 0;
+  padding: 0.3em 1em;
+  border-radius: 8px;
+  background-color: var(--Tri-Color);
+  color: #f1f1f1;
+  text-transform: capitalize;
+}
+
+form .aanmaak .userList .userItem input[type="checkbox"] {
+  appearance: none;
+}
+
+form .aanmaak .userList .userItem input[type="checkbox"]:checked ~ label {
+  background-color: var(--Tri-Color-Select);
 }
 
 form .Item {
@@ -335,8 +328,6 @@ form .Item input:hover, form .Item input:focus {
 @media screen and (min-width: 1280px) {
   form .Item input {
     margin: 0 auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }

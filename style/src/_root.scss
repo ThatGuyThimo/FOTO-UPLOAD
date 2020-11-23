@@ -1,11 +1,14 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: #{Color(BackgroundLight)};
+    --bannerColor: #{Color(BannerColorLight)};
     --text: #{Color(TextLight)};
     // colors
     // ===========================
     --inputClr: #{Color(InputLight)};
     --Pri-Color: #{Color(priClrLight)};
+    --Tri-Color: #{Color(triClrLight)};
+    --Tri-Color-Select: #{Color(triClrSelectLight)};
     --Input-Color: #{Color(SecClrLight)};
     --Acc-Color1: #{Color(accClrLight1)};
     --Acc-Color2: #{Color(accClrLight2)};
@@ -18,11 +21,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #{Color(BackgroundDark)};
+    --bannerColor: #{Color(BannerColorDark)};
     --text: #{Color(TextDark)};
     // colors
     // ===========================
     --inputClr: #{Color(InputDark)};
     --Pri-Color: #{Color(priClrDark)};
+    --Tri-Color: #{Color(triClrDark)};
+    --Tri-Color-Select: #{Color(triClrSelectDark)};
     --Input-Color: #{Color(SecClrDark)};
     --Acc-Color1: #{Color(accClrDark1)};
     --Acc-Color2: #{Color(accClrDark2)};

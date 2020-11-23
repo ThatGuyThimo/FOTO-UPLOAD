@@ -2,7 +2,7 @@
   margin: $defMargin;
   overflow-x: hidden;
   overflow-y: auto;
-  max-height: 370px;
+  max-height: 500px;
   scrollbar-width: thin;
   .scroll {
     // scroll = groupLIst
@@ -33,7 +33,28 @@ form {
     .GroupInput {
       @include InputStyle;
     }
+    .userList {
+      margin: 1em 0;
+      display: inline-flex;
+      width: 100%;
+      .userItem {
+        margin-right: 1em;
+        label {
+          cursor: pointer;
+          user-select: none;
+          @include selectUser;
+        }
+        input[type="checkbox"] {
+          appearance: none;
+
+          &:checked ~ label {
+            background-color: var(--Tri-Color-Select);
+          }
+        }
+      }
+    }
   }
+  // groep aanmaken
   .Item {
     margin: 1em 0;
     input {

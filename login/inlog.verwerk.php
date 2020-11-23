@@ -26,7 +26,7 @@
         // captcha
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $data = array(
-            'secret' => '6Lcb0ekZAAAAAEg3LJrC3z4LWhUkl4H1Uav4t0QM',
+            'secret' => '6Lcgd-IZAAAAAFHBuU84nDg7N4U2izBUOk1uoDQw',
             'response' => $_POST["g-recaptcha-response"]
         );
         $options = array(

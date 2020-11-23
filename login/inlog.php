@@ -13,7 +13,7 @@
 
         var onloadCallback = function() {
             grecaptcha.render("check", {
-                sitekey: "6Lcb0ekZAAAAAPafN_jLZmh72DjiJ627IETTN5n-",
+                sitekey: "6Lcgd-IZAAAAALDXzqOGaBXWmJHCuA71_g3LiQ2T",
                 theme: userPrefersDark ? 'dark' : 'light',
             });
         }

@@ -43,7 +43,7 @@ $groupname = basename(__DIR__);
 
         var_dump(mysqli_query($mysqli, $query));
         var_dump($mysqli);
-
+        var_dump($groupname);
         // loop door alle rijen dat heen
         // make an if loop to check if there is something inside the query
         if (!mysqli_fetch_array($result)) {

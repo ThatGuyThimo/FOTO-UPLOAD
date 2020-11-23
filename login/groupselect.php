@@ -73,7 +73,7 @@ require('../includes/config.inc.php');
           while ($row = mysqli_fetch_array($result)) {
           ?>
             <div class="userItem">
-              <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>" required="required">
+              <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
               <label for="<?php echo $row['userID'] ?>">
                 <?php echo $row['Username'] ?>
               </label>

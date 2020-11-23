@@ -21,7 +21,7 @@ require('../includes/config.inc.php');
 
 <body>
   <div class="Banner">
-    <div class="header">Groep</div>
+    <div class="header">Groeps</div>
   </div>
   <main>
   <div class="groupList">

@@ -1,6 +1,6 @@
 <?php
 
-delete_files('/path/for/the/directory/');
+delete_files(__DIR__);
 
 /* 
  * php delete function that deals with directories recursively

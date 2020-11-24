@@ -146,6 +146,11 @@ require('../includes/config.inc.php');
     fwrite($create_file, $generate_event_text);
     fclose($create_file);
 
+    // create the delete page
+    $create_file = fopen($path . "delete.php", "w");
+    fwrite($create_file, $generate_event_text);
+    fclose($create_file);
+
     // create the event directory
     mkdir("$path/events");
 

@@ -2,7 +2,7 @@
   margin: $defMargin;
   overflow-x: hidden;
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 50vh;
   scrollbar-width: thin;
   .scroll {
     // scroll = groupLIst
@@ -25,24 +25,51 @@
 }
 form {
   margin: $formMargin;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 32vh;
+  position: absolute;
+  background-color: var(--background);
+  bottom: -40px;
+  width: 93vw;
+  @media screen and (min-width: 1280px) {
+    width: 40vw;
+    max-width: 30%;
+    .userList {
+      width: 50vw;
+    }
+  }
+  // // // padding-top: 2em;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // height: 32vh;
   .aanmaak {
     .GroupInput {
       @include InputStyle;
     }
     .userList {
       margin: 1em 0;
-      display: inline-flex;
-      width: 100%;
+      max-width: 100%;
+      @media screen and (max-width: 396px) {
+        // display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 10vh;
+        scrollbar-width: thin;
+        .userItem {
+          margin-left: 0;
+          label {
+            width: 100%;
+          }
+        }
+      }
       .userItem {
-        margin-right: 1em;
+        display: inline-block;
+        margin: 0.5em 0.2em;
         label {
+          height: max-content;
           cursor: pointer;
           user-select: none;
           @include selectUser;
+          margin: 0%;
         }
         input[type="checkbox"] {
           appearance: none;

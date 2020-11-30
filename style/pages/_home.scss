@@ -1,0 +1,60 @@
+.main {
+  width: 100%;
+  margin: 3em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90vh;
+  .Header {
+    font-size: $headerFontSize * 0.7;
+    width: 80%;
+  }
+  .content {
+    display: flex;
+    .img {
+      display: none;
+    }
+  }
+  p {
+    font-size: $defFontSize;
+    width: 90%;
+  }
+
+  .btn {
+    @include ButtonStyle(var(--Pri-Color));
+    grid-area: BUTTON;
+    font-size: $btnFontSize * 0.8;
+    padding: 0.4em 3em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main {
+    width: 80%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
+    .Header {
+      font-size: $headerFontSize;
+      width: 80%;
+    }
+    .content {
+      display: flex;
+      .img {
+        display: block;
+      }
+    }
+    p {
+      font-size: $defFontSize;
+      width: 45%;
+    }
+
+    .btn {
+      @include ButtonStyle(var(--Pri-Color));
+      grid-area: BUTTON;
+      font-size: $headerFontSize * 0.6;
+      padding: 0.4em 3em;
+    }
+  }
+}

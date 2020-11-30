@@ -1,15 +1,17 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../../style/style.css">
-        <script src="script.js"></script>
-        <title>test site</title>
-    </head>
-    <body>
-        <h1>test site om te kijken of generate.php werkt</h1>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../../../style/output/style.css">
+    <script src="script.js"></script>
+    <title>test site</title>
+</head>
+
+<body>
+    <div class="Banner">
+        <div class="header">Events</div>
+    </div>
+</body>
+
 </html>

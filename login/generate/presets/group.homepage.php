@@ -74,10 +74,10 @@ $groupname = basename(__DIR__);
   <?php
   if (isset($_POST['submit'])) {
     
-    // put the groupname inside a variable 
+    // put the eventname inside a variable 
     $Eventname = $_POST['Eventname'];
 
-    // insert the group name and id and who made the group
+    // insert the event name and id and who made the event
     $EventQuery = "INSERT INTO event VALUES (NULL, '$Eventname')";
 
     $execute = mysqli_query($mysqli, $EventQuery);
@@ -105,39 +105,22 @@ $groupname = basename(__DIR__);
     $done = mysqli_query($mysqli, $createEvents);
 
     // put the groupname inside a variable
-    $Eventname = $_POST["Groupname"];
+    $Eventname = $_POST["Eventname"];
 
-    // set the name for the group index page
-    $groupindex = "index";
+
 
     // set the right path for the group
-    $path = "groups/$Eventname/";
-
-    // grab the content of the files for the group
-    $indextext = file_get_contents("generate/presets/group.homepage.php");
-    $eventtext = file_get_contents("generate/presets/form.event.generate.php");
-    $generate_event_text = file_get_contents("generate/presets/event.generate.php");
+    $path = "events/$Eventname/";
 
     // create the directory for the new group
     mkdir("$path");
 
+    $indextext = file_get_contents("../../generate/presets/event.php");
+
     // create index.html in the specified path
-    $create_file = fopen($path . "$groupindex.php", "w");
+    $create_file = fopen($path . "index.php", "w");
     fwrite($create_file, $indextext);
     fclose($create_file);
-
-    // create form.event.generate.php
-    $create_file = fopen($path . "form.event.generate.php", "w");
-    fwrite($create_file, $eventtext);
-    fclose($create_file);
-
-    // create the event generater
-    $create_file = fopen($path . "event.generate.php", "w");
-    fwrite($create_file, $generate_event_text);
-    fclose($create_file);
-
-    // create the event directory
-    mkdir("$path/events");
 
     // send the user to the new page
     header("location:index.php");

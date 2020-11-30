@@ -124,6 +124,7 @@ require('../includes/config.inc.php');
     $indextext = file_get_contents("generate/presets/group.homepage.php");
     $eventtext = file_get_contents("generate/presets/form.event.generate.php");
     $generate_event_text = file_get_contents("generate/presets/event.generate.php");
+    $deletetext = file_get_contents("generate/presets/delete.php");
 
     // create the directory for the new group
     mkdir("$path");
@@ -145,7 +146,7 @@ require('../includes/config.inc.php');
 
     // create the delete page
     $create_file = fopen($path . "delete.php", "w");
-    fwrite($create_file, $generate_event_text);
+    fwrite($create_file, $deletetext);
     fclose($create_file);
 
     // create the event directory

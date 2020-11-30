@@ -48,7 +48,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--text);
-  overflow: hidden;
   overflow-x: hidden;
 }
 
@@ -156,6 +155,7 @@ input {
   display: flex;
   width: 100%;
   margin: 0 auto;
+  height: 50%;
 }
 
 .inlogdiv form .submitBtn .Btn_login {
@@ -177,13 +177,6 @@ input {
 .inlogdiv form .submitBtn .Btn_login:hover, .inlogdiv form .submitBtn .Btn_login:focus {
   outline: none;
   cursor: pointer;
-}
-
-@media screen and (min-width: 1280px) {
-  .inlogdiv form .submitBtn .Btn_login {
-    margin: 0 auto;
-    width: max-content;
-  }
 }
 
 .error {
@@ -215,13 +208,6 @@ input {
 .error .Btn:hover, .error .Btn:focus {
   outline: none;
   cursor: pointer;
-}
-
-@media screen and (min-width: 1280px) {
-  .error .Btn {
-    margin: 0 auto;
-    width: max-content;
-  }
 }
 
 .groupList {
@@ -350,11 +336,4 @@ form .Item input {
 form .Item input:hover, form .Item input:focus {
   outline: none;
   cursor: pointer;
-}
-
-@media screen and (min-width: 1280px) {
-  form .Item input {
-    margin: 0 auto;
-    width: max-content;
-  }
 }

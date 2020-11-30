@@ -1,10 +1,18 @@
 .Banner {
-    padding: $defPadding;
-    background-color: var(--bannerColor);
+  padding: $defPadding;
+  background-color: var(--bannerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   .header {
     font-weight: 800;
     color: #f1f1f1;
     text-transform: uppercase;
     font-size: $BannerFontSize;
+  }
+  .btn {
+    @include ButtonStyle(var(--Pri-Color));
+    width: max-content;
+    margin: 0;
   }
 }

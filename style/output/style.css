@@ -77,6 +77,9 @@ input {
 .Banner {
   padding: 1rem 2rem;
   background-color: var(--bannerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Banner .header {
@@ -84,6 +87,127 @@ input {
   color: #f1f1f1;
   text-transform: uppercase;
   font-size: 1.6rem;
+}
+
+.Banner .btn {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  width: max-content;
+  margin: 0;
+}
+
+.Banner .btn:hover, .Banner .btn:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+  margin: 3em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90vh;
+}
+
+.main .Header {
+  font-size: 2.1rem;
+  width: 80%;
+}
+
+.main .content {
+  display: flex;
+}
+
+.main .content .img {
+  display: none;
+}
+
+.main p {
+  font-size: 1.2rem;
+  width: 90%;
+}
+
+.main .btn {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  grid-area: BUTTON;
+  font-size: 1.2rem;
+  padding: 0.4em 3em;
+}
+
+.main .btn:hover, .main .btn:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    width: 80%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
+  }
+  .main .Header {
+    font-size: 3rem;
+    width: 80%;
+  }
+  .main .content {
+    display: flex;
+  }
+  .main .content .img {
+    display: block;
+  }
+  .main p {
+    font-size: 1.2rem;
+    width: 45%;
+  }
+  .main .btn {
+    background-color: var(--Pri-Color) !important;
+    color: #f1f1f1;
+    border-radius: 100px;
+    border: none;
+    padding: 0.4rem 2rem;
+    margin: auto;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    grid-area: BUTTON;
+    font-size: 1.8rem;
+    padding: 0.4em 3em;
+  }
+  .main .btn:hover, .main .btn:focus {
+    outline: none;
+    cursor: pointer;
+  }
 }
 
 .inlogdiv form {

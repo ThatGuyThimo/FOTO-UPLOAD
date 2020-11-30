@@ -38,9 +38,6 @@ require('../includes/config.inc.php');
         //execute the query
         $result = mysqli_query($mysqli, $query);
 
-        //voer de query uit
-        $result = mysqli_query($mysqli, $query);
-
         // loop door alle rijen dat heen
         while ($row = mysqli_fetch_array($result)) {
         ?>
@@ -155,7 +152,9 @@ require('../includes/config.inc.php');
     mkdir("$path/events");
 
     // send the user to the new page
-    header("location:groupselect.php");
+    //header("location:groupselect.php");
+    // sort of fix (the bug was only present on Jelle's device)
+    echo "<script>window.location.href='groupselect.php'</script>";
   }
   ?>
 </body>

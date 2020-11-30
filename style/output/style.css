@@ -48,7 +48,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--text);
-  overflow: hidden;
   overflow-x: hidden;
 }
 
@@ -180,13 +179,6 @@ input {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1280px) {
-  .inlogdiv form .submitBtn .Btn_login {
-    margin: 0 auto;
-    width: max-content;
-  }
-}
-
 .error {
   display: flex;
   justify-content: center;
@@ -216,13 +208,6 @@ input {
 .error .Btn:hover, .error .Btn:focus {
   outline: none;
   cursor: pointer;
-}
-
-@media screen and (min-width: 1280px) {
-  .error .Btn {
-    margin: 0 auto;
-    width: max-content;
-  }
 }
 
 .groupList {
@@ -351,11 +336,4 @@ form .Item input {
 form .Item input:hover, form .Item input:focus {
   outline: none;
   cursor: pointer;
-}
-
-@media screen and (min-width: 1280px) {
-  form .Item input {
-    margin: 0 auto;
-    width: max-content;
-  }
 }

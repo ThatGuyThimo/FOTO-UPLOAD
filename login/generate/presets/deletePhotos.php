@@ -27,7 +27,7 @@ $userID = $_SESSION["userID"];
   <div class="Banner">
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname . " - "; ?></div>
-    <a href="deletePhotos.php">Manage photos</a>
+    <a href="index.php">Back</a>
   </div>
   <div class="photo's">
     <!-- show all the pictures inside the folder -->
@@ -36,7 +36,7 @@ $userID = $_SESSION["userID"];
     $query = "SELECT link
                   FROM images
                   INNER JOIN event ON event.eventID = images.eventID
-                  WHERE Eventname = '$eventname'";
+                  WHERE Eventname = '$eventname' AND userID = $userID";
     //execute the query
     $result = mysqli_query($mysqli, $query);
 
@@ -47,7 +47,8 @@ $userID = $_SESSION["userID"];
     } else {
       while ($row = mysqli_fetch_array($result)) {
     ?>
-        <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="" style="width: 50px;">
+        <input type="checkbox" name="" id=""><img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="" style="width: 50px;"></input>
+        
     <?php
       }
     }

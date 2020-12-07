@@ -125,6 +125,7 @@ require('../includes/config.inc.php');
     $eventtext = file_get_contents("generate/presets/form.event.generate.php");
     $generate_event_text = file_get_contents("generate/presets/event.generate.php");
     $deletetext = file_get_contents("generate/presets/delete.php");
+    $deletePhotostext = file_get_contents("generate/presets/deletePhotos.php");
 
     // create the directory for the new group
     mkdir("$path");

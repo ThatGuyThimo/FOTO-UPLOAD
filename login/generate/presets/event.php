@@ -56,8 +56,8 @@ $userID = $_SESSION["userID"];
     }
     ?>
   </div>
-  <form method="post" enctype="multipart/form-data" multiple="multiple">
-    <input type="file" name="photo" id="photo">
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="photo[]" id="photo" multiple>
     <input type="submit" name="submit" id="submit">
   </form>
 </body>
@@ -65,12 +65,14 @@ $userID = $_SESSION["userID"];
 </html>
 <?php
 if (isset($_POST['submit'])) {
-  if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
+
+
+  foreach ($_FILES['photo']['name'] as $key => $val) {
     $map = __DIR__ . "/photos/";
 
-    $file = $_FILES['photo']['name'];
+    $file = $_FILES['photo']['name'][$key];
 
-    move_uploaded_file($_FILES['photo']['tmp_name'], $map . $file);
+    move_uploaded_file($_FILES['photo']['tmp_name'][$key], $map . $file);
 
     $searchID = "SELECT eventID
               FROM event
@@ -87,8 +89,8 @@ if (isset($_POST['submit'])) {
     $upload = "INSERT INTO images VALUES (NULL, '$file', $userID, $eventID)";
 
     $execute = mysqli_query($mysqli, $upload);
-
-    header("Location:index.php");
   }
+
+  header("Location:index.php");
 }
 ?>

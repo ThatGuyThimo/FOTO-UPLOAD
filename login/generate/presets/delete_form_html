@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 3</title>
+    <script defer="defer" src="ajax.js"></script>
+</head>
+<body>
+    <h1>Meubels</h1>
+    <div>
+        <label>delete?</label>
+        <button id="delete" onclick="zoek1()">delete</button>
+    </div>
+    <div id="resultaat"></div>
+</body>
+
+</html>

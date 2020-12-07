@@ -118,10 +118,16 @@ $groupname = basename(__DIR__);
     mkdir("$pathPhotos");
 
     $indextext = file_get_contents("../../generate/presets/event.php");
+    $deletetext = file_get_contents("../../generate/presets/deletePhotos.php");
 
     // create index.html in the specified path
     $create_file = fopen($path . "index.php", "w");
     fwrite($create_file, $indextext);
+    fclose($create_file);
+
+    // create index.html in the specified path
+    $create_file = fopen($path . "deletePhotos.php", "w");
+    fwrite($create_file, $deletetext);
     fclose($create_file);
 
     // send the user to the new page

@@ -132,6 +132,56 @@ svg {
   cursor: pointer;
 }
 
+.centerIt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.centerIt h2 {
+  width: 80%;
+}
+
+.centerIt .deleteButton {
+  margin: 1rem 2rem;
+}
+
+.centerIt .deleteButton .deleteBtn {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.centerIt .deleteButton .deleteBtn:hover, .centerIt .deleteButton .deleteBtn:focus {
+  outline: none;
+  cursor: pointer;
+}
+
 .main {
   width: 100%;
   margin: 3em 2em;

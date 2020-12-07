@@ -1,0 +1,15 @@
+.centerIt {
+    @include Center;
+    justify-content: space-around;
+    height: 80vh;
+    flex-direction: column;
+    h2 {
+        width: 80%;
+    }
+    .deleteButton {
+        margin: $defPadding;
+      .deleteBtn {
+        @include ButtonStyle(var(--Pri-Color));
+      }
+    }
+}

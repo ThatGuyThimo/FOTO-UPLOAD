@@ -1,0 +1,2 @@
+#plaats dit bestand in httpdocs
+ErrorDocument 404 /found404.html

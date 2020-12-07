@@ -111,9 +111,11 @@ $groupname = basename(__DIR__);
 
     // set the right path for the group
     $path = "events/$Eventname/";
+    $pathPhotos = "events/$Eventname/photos";
 
     // create the directory for the new group
     mkdir("$path");
+    mkdir("$pathPhotos");
 
     $indextext = file_get_contents("../../generate/presets/event.php");
 

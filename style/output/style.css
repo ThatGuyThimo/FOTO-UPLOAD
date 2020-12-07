@@ -40,7 +40,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -64,6 +65,11 @@ main {
 
 a {
   text-decoration: none;
+  color: var(--text);
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 li {
@@ -77,14 +83,21 @@ input {
 svg {
   font-size: 2em !important;
   margin-left: .4em !important;
+  color: #f1f1f1 !important;
 }
 
 .Banner {
   padding: 1rem 2rem;
   background-color: var(--bannerColor);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .Banner .header {
@@ -108,6 +121,8 @@ svg {
   font-size: 1.5rem;
   font-weight: 800;
   text-decoration: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0;
 }
@@ -120,9 +135,15 @@ svg {
 .main {
   width: 100%;
   margin: 3em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 90vh;
 }
 
@@ -132,6 +153,8 @@ svg {
 }
 
 .main .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -172,9 +195,15 @@ svg {
   .main {
     width: 80%;
     margin: 2em auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 70vh;
   }
   .main .Header {
@@ -182,6 +211,8 @@ svg {
     width: 80%;
   }
   .main .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .main .content .img {
@@ -219,10 +250,17 @@ svg {
   padding: 1rem 2rem;
   margin: 0 auto;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 75vh;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .inlogdiv form .Form {
@@ -230,8 +268,13 @@ svg {
 }
 
 .inlogdiv form .Form .formItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 1rem 0.5rem;
   font-size: 1.2rem;
 }
@@ -262,7 +305,8 @@ svg {
   background-color: var(--Acc-Color1);
   border-radius: 52px;
   z-index: -3;
-  transform: translate(70%, 105%);
+  -webkit-transform: translate(70%, 105%);
+          transform: translate(70%, 105%);
 }
 
 .inlogdiv form .Form .formItem:nth-child(2)::before {
@@ -281,6 +325,8 @@ svg {
 }
 
 .inlogdiv form .submitBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin: 0 auto;
@@ -309,9 +355,15 @@ svg {
 }
 
 .error {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   height: 100%;
   height: 100vh;
@@ -331,6 +383,8 @@ svg {
   font-size: 1.5rem;
   font-weight: 800;
   text-decoration: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -348,13 +402,24 @@ svg {
 }
 
 .groupList .scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: start;
-  flex-direction: column-reverse;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .groupList .scroll a {
   padding: 0 1em;
+}
+
+.groupList .scroll a:hover {
+  text-decoration: none;
 }
 
 .groupList .scroll a .groupItem {
@@ -422,9 +487,14 @@ form .aanmaak .userList .userItem {
 }
 
 form .aanmaak .userList .userItem label {
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin: 4em 0;
   padding: 0.3em 1em;
   border-radius: 8px;
@@ -435,7 +505,9 @@ form .aanmaak .userList .userItem label {
 }
 
 form .aanmaak .userList .userItem input[type="checkbox"] {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 form .aanmaak .userList .userItem input[type="checkbox"]:checked ~ label {
@@ -476,9 +548,16 @@ form .Item input:hover, form .Item input:focus {
 }
 
 .groupList .scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: start;
-  flex-direction: column-reverse;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .groupList .scroll a {
@@ -504,4 +583,64 @@ form .EventInput {
   background-color: var(--inputClr);
   color: var(--text);
   width: 100%;
+}
+
+.photos {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  margin: 3em 0;
+  width: 100%;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 50vh;
+  scrollbar-width: thin;
+}
+
+.photos .Tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.photos .Tile img {
+  width: 195px;
+  height: 195px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.fotoForm .fotoInput {
+  margin: 3em 0;
+}
+
+.fotoForm .fotoSubmit {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.fotoForm .fotoSubmit:hover, .fotoForm .fotoSubmit:focus {
+  outline: none;
+  cursor: pointer;
 }

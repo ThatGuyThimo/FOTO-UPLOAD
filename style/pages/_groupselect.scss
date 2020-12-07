@@ -11,6 +11,9 @@
     flex-direction: column-reverse;
     a {
       padding: 0 1em;
+      &:hover {
+        text-decoration: none;
+      }
       .groupItem {
         border-radius: $defRadius;
         padding: $defPadding;

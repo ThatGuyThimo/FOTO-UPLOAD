@@ -1,7 +1,8 @@
 <?php
-$DIR = __DIR__;
+require('../../../includes/config.inc.php');
+$DIR = basename(__DIR__);
 delete_files(__DIR__);
-$result = mysqli_query($mysqli, "DELETE * FROM groups WHERE `Groupname` = '$DIR' ");
+$result = mysqli_query($mysqli, "DELETE FROM groups WHERE `Groupname` = '$DIR' ");
 /* 
  * php delete function that deals with directories recursively
  */
@@ -19,7 +20,6 @@ function delete_files($target) {
         foreach( $files as $file ){
             delete_files( $file );      
         }
-        header("../../groepselect.php");
 
         rmdir( $target );
     } elseif(is_file($target)) {

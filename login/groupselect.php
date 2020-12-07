@@ -126,7 +126,7 @@ require('../includes/config.inc.php');
     $generate_event_text = file_get_contents("generate/presets/event.generate.php");
     $deletetext = file_get_contents("generate/presets/delete.php");
     $ajaxtext = file_get_contents("generate/presets/ajax.js");
-    $delete_form_html = file_get_contents("generate/presets/delete_form_html.html");
+    $delete_form_html = file_get_contents("generate/presets/delete_form.html");
 
     // create the directory for the new group
     mkdir("$path");
@@ -162,7 +162,7 @@ require('../includes/config.inc.php');
     fclose($create_file);
 
     // create the deleteform page
-    $create_file = fopen($path . "delete_form_html.html", "w");
+    $create_file = fopen($path . "delete_form.html", "w");
     fwrite($create_file, $delete_form_html);
     fclose($create_file);
 

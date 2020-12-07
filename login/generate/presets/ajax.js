@@ -30,8 +30,7 @@ function zoek1(myName)
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             const result = xmlHttp.responseText;
 
-            document.getElementById('resultaat').innerHTML = result;
-            console.log(result);
+            window.location.replace("../../groupselect.php");
         }
     }
 

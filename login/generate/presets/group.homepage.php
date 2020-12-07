@@ -24,6 +24,7 @@ $groupname = basename(__DIR__);
 <body>
   <div class="Banner">
     <div class="header">Events</div>
+    <div><a href="delete_form.html">delete group</a></div>
   </div>
   <main>
     <div class="groupList">

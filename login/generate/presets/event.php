@@ -20,6 +20,7 @@ $userID = $_SESSION["userID"];
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../../../../style/output/style.css">
+  <script src="../../../../../assets/js/fontawesome.js"></script>
   <title><?php echo $eventname; ?></title>
 </head>
 
@@ -27,7 +28,9 @@ $userID = $_SESSION["userID"];
   <div class="Banner">
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname . " - "; ?></div>
-    <a href="deletePhotos.php">Manage photos</a>
+    <div>
+      <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
+    </div>
   </div>
   <div class="photo's">
     <!-- show all the pictures inside the folder -->
@@ -79,7 +82,7 @@ if (isset($_POST['submit'])) {
 
     $raweventID = mysqli_fetch_array($newsearchID);
 
-    $eventID = $raweventID['eventID']; 
+    $eventID = $raweventID['eventID'];
 
     $upload = "INSERT INTO images VALUES (NULL, '$file', $userID, $eventID)";
 

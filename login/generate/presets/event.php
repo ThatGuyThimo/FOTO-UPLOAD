@@ -2,7 +2,7 @@
 session_start();
 // check if the user is loggedin
 if (!isset($_SESSION['Username']) || strlen($_SESSION['Username']) == 0) {
-  header("Location:index.php");
+  header("Location:inlog.php");
   exit;
 }
 
@@ -62,24 +62,25 @@ $userID = $_SESSION["userID"];
 <?php
 if (isset($_POST['submit'])) {
   if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
+    // set location for the photo's
     $map = __DIR__ . "/photos/";
-
+    // get the name of the file
     $file = $_FILES['photo']['name'];
-
+    // place the file in the right folder with the right name
     move_uploaded_file($_FILES['photo']['tmp_name'], $map . $file);
-
+    // get the event id
     $searchID = "SELECT eventID
               FROM event
               WHERE Eventname = '$eventname'";
-    //execute the query
+    // execute the query
     $newsearchID = mysqli_query($mysqli, $searchID);
-
-    echo $eventname;
-
+    
+    // extract he ID
     $raweventID = mysqli_fetch_array($newsearchID);
 
     $eventID = $raweventID['eventID']; 
 
+    // update the info of the photo on the database
     $upload = "INSERT INTO images VALUES (NULL, '$file', $userID, $eventID)";
 
     $execute = mysqli_query($mysqli, $upload);

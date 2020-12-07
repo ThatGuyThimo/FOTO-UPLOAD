@@ -30,13 +30,14 @@ $groupname = basename(__DIR__);
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../../style/output/style.css">
+  <script src="../../../assets/js/fontawesome.js"></script>
   <title><?php echo $groupname; ?></title>
 </head>
 
 <body>
   <div class="Banner">
     <div class="header">Events</div>
-    <div><a href="delete_form.html">delete group</a></div>
+    <div><a href="delete_form.html"><i class="fal fa-folder-minus"></i></a></div>
   </div>
   <main>
     <div class="groupList">

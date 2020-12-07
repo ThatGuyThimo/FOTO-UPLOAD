@@ -74,6 +74,11 @@ input {
   border-radius: 8px;
 }
 
+svg {
+  font-size: 2em !important;
+  margin-left: .4em !important;
+}
+
 .Banner {
   padding: 1rem 2rem;
   background-color: var(--bannerColor);
@@ -368,16 +373,16 @@ form {
   position: absolute;
   background-color: var(--background);
   bottom: -40px;
-  width: 93vw;
+  width: 90%;
 }
 
 @media screen and (min-width: 1280px) {
   form {
     width: 40vw;
-    max-width: 30%;
+    max-width: 40%;
   }
   form .userList {
-    width: 50vw;
+    width: 60vw;
   }
 }
 
@@ -460,4 +465,43 @@ form .Item input {
 form .Item input:hover, form .Item input:focus {
   outline: none;
   cursor: pointer;
+}
+
+.groupList {
+  margin: 1rem 1.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 50vh;
+  scrollbar-width: thin;
+}
+
+.groupList .scroll {
+  display: flex;
+  justify-content: start;
+  flex-direction: column-reverse;
+}
+
+.groupList .scroll a {
+  padding: 0 1em;
+}
+
+.groupList .scroll a .eventItem {
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  background-color: var(--Input-Color);
+}
+
+.groupList .scroll a .eventItem .event {
+  color: var(--text);
+}
+
+form .EventInput {
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: var(--inputClr);
+  color: var(--text);
+  width: 100%;
 }

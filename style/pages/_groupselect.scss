@@ -28,19 +28,14 @@ form {
   position: absolute;
   background-color: var(--background);
   bottom: -40px;
-  width: 93vw;
+  width: 90%;
   @media screen and (min-width: 1280px) {
     width: 40vw;
-    max-width: 30%;
+    max-width: 40%;
     .userList {
-      width: 50vw;
+      width: 60vw;
     }
   }
-  // // // padding-top: 2em;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // height: 32vh;
   .aanmaak {
     .GroupInput {
       @include InputStyle;

@@ -35,6 +35,10 @@ li {
 input {
   border-radius: $inputRadius;
 }
+svg {
+  font-size: 2em !important;
+  margin-left: .4em !important;
+}
 // ========================
 // components
 // ========================
@@ -47,3 +51,4 @@ input {
 @import "./pages/inlog";
 @import "./pages/error";
 @import "./pages/groupselect";
+@import "./pages/eventselect";

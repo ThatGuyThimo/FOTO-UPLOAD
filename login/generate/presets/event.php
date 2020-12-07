@@ -1,10 +1,23 @@
 <?php
+//read the config-file
+require('../../../../../includes/config.inc.php');
 session_start();
 // check if the user is loggedin
-if (!isset($_SESSION['Username']) || strlen($_SESSION['Username']) == 0) {
-  header("Location:index.php");
+
+$groupname = basename(__DIR__);
+
+$compare = "SELECT Username
+            FROM user
+            JOIN users ON users.userID = user.userID
+            JOIN groups ON groups.groupID = users.groupID
+            WHERE groupname = '$groupname'";
+
+$acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
+if (!$_SESSION['Username'] == $acces['Username']) {
+  header("Location:../../inlog.php");
   exit;
 }
+
 
 //read the config-file
 require('../../../../../includes/config.inc.php');

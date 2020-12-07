@@ -2,8 +2,20 @@
 session_start();
 // check if the user is loggedin
 if (!isset($_SESSION['Username']) || strlen($_SESSION['Username']) == 0) {
-  header("Location:index.php");
-  exit;
+  
+  $groupname = basename(__DIR__);
+
+  $compare = "SELECT userID
+              FROM users
+              JOIN group ON group.groupID = users.groupID
+              WHERE $groupname = groupname";
+
+  $acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
+
+  if (!$_SESSION['Username'] == $acces['userID']) {
+    header("Location:inlog.php");
+    exit;
+  }
 }
 
 //read the config-file

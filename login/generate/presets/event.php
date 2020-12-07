@@ -20,6 +20,7 @@ $userID = $_SESSION["userID"];
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../../../../style/output/style.css">
+  <script src="../../../../../assets/js/fontawesome.js"></script>
   <title><?php echo $eventname; ?></title>
 </head>
 
@@ -27,7 +28,9 @@ $userID = $_SESSION["userID"];
   <div class="Banner">
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname . " - "; ?></div>
-    <a href="deletePhotos.php">Manage photos</a>
+    <div>
+      <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
+    </div>
   </div>
   <div class="photo's">
     <!-- show all the pictures inside the folder -->
@@ -54,7 +57,7 @@ $userID = $_SESSION["userID"];
     ?>
   </div>
   <form method="post" enctype="multipart/form-data">
-    <input type="file" name="photo" id="photo">
+    <input type="file" name="photo[]" id="photo" multiple>
     <input type="submit" name="submit" id="submit">
   </form>
 </body>
@@ -62,12 +65,14 @@ $userID = $_SESSION["userID"];
 </html>
 <?php
 if (isset($_POST['submit'])) {
-  if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
+
+
+  foreach ($_FILES['photo']['name'] as $key => $val) {
     $map = __DIR__ . "/photos/";
 
-    $file = $_FILES['photo']['name'];
+    $file = $_FILES['photo']['name'][$key];
 
-    move_uploaded_file($_FILES['photo']['tmp_name'], $map . $file);
+    move_uploaded_file($_FILES['photo']['tmp_name'][$key], $map . $file);
 
     $searchID = "SELECT eventID
               FROM event
@@ -79,13 +84,13 @@ if (isset($_POST['submit'])) {
 
     $raweventID = mysqli_fetch_array($newsearchID);
 
-    $eventID = $raweventID['eventID']; 
+    $eventID = $raweventID['eventID'];
 
     $upload = "INSERT INTO images VALUES (NULL, '$file', $userID, $eventID)";
 
     $execute = mysqli_query($mysqli, $upload);
-
-    header("Location:index.php");
   }
+
+  header("Location:index.php");
 }
 ?>

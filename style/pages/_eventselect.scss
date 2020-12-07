@@ -1,0 +1,30 @@
+.groupList {
+  margin: $defMargin;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 50vh;
+  scrollbar-width: thin;
+  .scroll {
+    // scroll = groupLIst
+    display: flex;
+    justify-content: start;
+    flex-direction: column-reverse;
+    a {
+      padding: 0 1em;
+      .eventItem {
+        border-radius: $defRadius;
+        padding: $defPadding;
+        margin: 1rem 0;
+        background-color: var(--Input-Color);
+        .event {
+          color: var(--text);
+        }
+      }
+    }
+  }
+}
+form {
+  .EventInput {
+    @include InputStyle;
+  }
+}

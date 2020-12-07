@@ -56,7 +56,7 @@ $userID = $_SESSION["userID"];
     }
     ?>
   </div>
-  <form method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data" multiple="multiple">
     <input type="file" name="photo" id="photo">
     <input type="submit" name="submit" id="submit">
   </form>

@@ -12,6 +12,7 @@ function delete_files($target) {
         foreach( $files as $file ){
             delete_files( $file );      
         }
+        header("../../groepselect.php");
 
         rmdir( $target );
     } elseif(is_file($target)) {

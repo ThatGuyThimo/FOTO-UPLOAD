@@ -23,7 +23,7 @@ $userID = $_SESSION["userID"];
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname . " - "; ?></div>
     <div>
-      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+      <i style="margin-right: 1.5em; cursor: pointer;" onclick="window.history.back();" class="fad fa-undo"></i>
     </div>
   </div>
   <main>

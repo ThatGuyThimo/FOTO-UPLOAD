@@ -13,11 +13,11 @@ $compare = "SELECT Username
             WHERE groupname = '$groupname'";
 
 $acces = mysqli_query($mysqli, $compare);
-  $check = false;
+$check = false;
 while ($names = mysqli_fetch_array($acces)) {
   if (strtolower($_SESSION['Username']) == strtolower($names['Username'])) {
     $check = true;
-  } else if($check != true){
+  } else if ($check != true) {
     $check = false;
   }
 }
@@ -43,7 +43,7 @@ if ($check == false) {
     <div class="header">Events</div>
     <div>
       <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
-      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+      <i onclick="window.history.back();" style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       <a href="../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>

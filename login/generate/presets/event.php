@@ -19,7 +19,7 @@ $check = false;
 while ($names = mysqli_fetch_array($acces)) {
   if (strtolower($_SESSION['Username']) == strtolower($names['Username'])) {
     $check = true;
-  } else if($check != true){
+  } else if ($check != true) {
     $check = false;
   }
 }
@@ -48,7 +48,7 @@ $userID = $_SESSION['userID'];
     <div class="header"><?php echo $eventname . " - "; ?></div>
     <div>
       <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
-      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+      <i onclick="window.history.back();" style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       <a href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>
@@ -70,10 +70,10 @@ $userID = $_SESSION['userID'];
     } else {
       while ($row = mysqli_fetch_array($result)) {
     ?>
-    <div class="Tile">
-      <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
-      <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
-    </div>
+        <div class="Tile">
+          <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
+          <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
+        </div>
     <?php
       }
     }

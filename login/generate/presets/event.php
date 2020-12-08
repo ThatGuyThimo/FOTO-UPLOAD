@@ -47,6 +47,7 @@ $userID = $_SESSION['userID'];
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname . " - "; ?></div>
     <div>
+      <a href="delete_form_event.html"><i class="fad fa-folder-minus"></i></a>
       <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
       <i onclick="window.history.back();" style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       <a href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>

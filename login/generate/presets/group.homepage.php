@@ -1,28 +1,32 @@
 <?php
+//read the config-file
+require('../../../includes/config.inc.php');
 session_start();
 // check if the user is loggedin
-if (!isset($_SESSION['Username']) || strlen($_SESSION['Username']) == 0) {
-  
-  $groupname = basename(__DIR__);
 
-  $compare = "SELECT userID
-              FROM users
-              JOIN group ON group.groupID = users.groupID
-              WHERE $groupname = groupname";
+$groupname = basename(__DIR__);
 
-  $acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
+$compare = "SELECT Username
+            FROM user
+            JOIN users ON users.userID = user.userID
+            JOIN groups ON groups.groupID = users.groupID
+            WHERE groupname = '$groupname'";
 
-  if (!$_SESSION['Username'] == $acces['userID']) {
-    header("Location:inlog.php");
-    exit;
+$acces = mysqli_query($mysqli, $compare);
+
+while ($names = mysqli_fetch_array($acces)) {
+  if (strtolower($_SESSION['Username']) == strtolower($names['Username'])) {
+    $check = true;
+  } else {
+    $check = false;
   }
 }
 
-//read the config-file
-require('../../../includes/config.inc.php');
+if ($check == false) {
+  header("Location:../../inlog.php");
+  exit;
+}
 
-// get the groupname
-$groupname = basename(__DIR__);
 ?>
 <!DOCTYPE html>
 <html lang="eng">

@@ -1,6 +1,6 @@
 <?php
 //read the config-file
-require('../../../includes/config.inc.php');
+require('../../../../../includes/config.inc.php');
 session_start();
 // check if the user is loggedin
 
@@ -13,10 +13,10 @@ $compare = "SELECT Username
             WHERE groupname = '$groupname'";
 
 $acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
-if (!$_SESSION['Username'] == $acces['Username']) {
-  header("Location:../../inlog.php");
-  exit;
-}
+// if (!$_SESSION['Username'] == $acces['Username']) {
+//   header("Location:../../inlog.php");
+//   exit;
+// }
 
 $userID = $_SESSION["userID"];
 ?>
@@ -26,6 +26,7 @@ $userID = $_SESSION["userID"];
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../../../../style/output/style.css">
+  <script src="../../../../../assets/js/fontawesome.js"></script>
   <title><?php echo $eventname; ?></title>
 </head>
 
@@ -33,7 +34,9 @@ $userID = $_SESSION["userID"];
   <div class="Banner">
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname . " - "; ?></div>
-    <a href="index.php">Back</a>
+    <div>
+      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+    </div>
   </div>
   <form method="post">
     <div class="photo's">

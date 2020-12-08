@@ -20,7 +20,7 @@ $acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
 
 
 //read the config-file
-require('../../../../../includes/config.inc.php');
+// require('../../../../../includes/config.inc.php');
 
 // get the groupname
 $eventname = basename(__DIR__);
@@ -43,6 +43,8 @@ $userID = $_SESSION["userID"];
     <div class="header"><?php echo $eventname . " - "; ?></div>
     <div>
       <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
+      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+      <a href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>
   <div class="photos">
@@ -72,10 +74,13 @@ $userID = $_SESSION["userID"];
     }
     ?>
   </div>
-  <form class="fotoForm" method="post" enctype="multipart/form-data">
-    <input class="fotoInput" type="file" name="photo[]" id="photo" multiple>
-    <input class="fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
-  </form>
+  <main>
+    <form class="fotoForm" method="post" enctype="multipart/form-data">
+      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple>
+      <input class="fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
+    </form>
+  </main>
+
 </body>
 
 </html>

@@ -6,6 +6,7 @@ $delete_images = mysqli_query($mysqli, "DELETE FROM `images` WHERE eventID IN (S
 $delete_images;
 $delete_event = mysqli_query($mysqli, "DELETE FROM `event` WHERE eventID IN (SELECT eventID FROM events WHERE groupID = (SELECT groupID FROM groups WHERE Groupname = '$DIR'))");
 $delete_events = mysqli_query($mysqli, "DELETE FROM `events` WHERE groupID = (SELECT groupID FROM groups WHERE Groupname = '$DIR')");
+$delete_users = mysqli_query($mysqli, "DELETE FROM `users` WHERE groupID = (SELECT groupID FROM groups WHERE Groupname = '$DIR')");
 $delete_group = mysqli_query($mysqli, "DELETE FROM groups WHERE `Groupname` = '$DIR' ");
 delete_files(__DIR__);
 /* 

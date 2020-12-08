@@ -4,28 +4,31 @@ require('../../../../../includes/config.inc.php');
 session_start();
 // check if the user is loggedin
 
-$groupname = basename(__DIR__);
+$eventname = basename(__DIR__);
 
 $compare = "SELECT Username
             FROM user
             JOIN users ON users.userID = user.userID
             JOIN groups ON groups.groupID = users.groupID
-            WHERE groupname = '$groupname'";
+            JOIN events ON events.groupID = groups.groupID
+            JOIN event ON event.eventID = events.eventID
+            WHERE Eventname = '$eventname'";
 
-$acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
-// if (!$_SESSION['Username'] == $acces['Username']) {
-//   header("Location:../../inlog.php");
-//   exit;
-// }
+$acces = mysqli_query($mysqli, $compare);
+$check = false;
+while ($names = mysqli_fetch_array($acces)) {
+  if (strtolower($_SESSION['Username']) == strtolower($names['Username'])) {
+    $check = true;
+  } else if($check != true){
+    $check = false;
+  }
+}
 
+if ($check == false) {
+  header("Location:../../inlog.php");
+  exit;
+}
 
-//read the config-file
-// require('../../../../../includes/config.inc.php');
-
-// get the groupname
-$eventname = basename(__DIR__);
-
-$userID = $_SESSION["userID"];
 ?>
 <!DOCTYPE html>
 <html lang="eng">
@@ -65,10 +68,10 @@ $userID = $_SESSION["userID"];
     } else {
       while ($row = mysqli_fetch_array($result)) {
     ?>
-        <div class="Tile">
-          <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
-          <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
-        </div>
+    <div class="Tile">
+      <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
+      <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
+    </div>
     <?php
       }
     }

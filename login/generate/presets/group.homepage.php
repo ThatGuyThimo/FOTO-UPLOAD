@@ -13,11 +13,11 @@ $compare = "SELECT Username
             WHERE groupname = '$groupname'";
 
 $acces = mysqli_query($mysqli, $compare);
-
+  $check = false;
 while ($names = mysqli_fetch_array($acces)) {
   if (strtolower($_SESSION['Username']) == strtolower($names['Username'])) {
     $check = true;
-  } else {
+  } else if($check != true){
     $check = false;
   }
 }

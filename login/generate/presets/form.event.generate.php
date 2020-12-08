@@ -2,7 +2,7 @@
 <html lang="eng">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.min.css">
         <title>generate form</title>
     </head>
     <body>

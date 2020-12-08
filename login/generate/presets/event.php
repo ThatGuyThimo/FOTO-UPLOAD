@@ -29,6 +29,8 @@ if ($check == false) {
   exit;
 }
 
+
+$userID = $_SESSION['userID'];
 ?>
 <!DOCTYPE html>
 <html lang="eng">

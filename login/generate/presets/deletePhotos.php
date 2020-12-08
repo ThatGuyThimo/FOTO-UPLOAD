@@ -26,36 +26,42 @@ $userID = $_SESSION["userID"];
       <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
     </div>
   </div>
-  <form method="post">
-    <div class="photo's">
-      <!-- show all the pictures inside the folder -->
-      <?php
-      // query every userid in relation with the group
-      $query = "SELECT link, ID
+  <main>
+    <form method="post" class="formPhotoEdit">
+      <div class="photosEdit">
+        <!-- show all the pictures inside the folder -->
+        <?php
+        // query every userid in relation with the group
+        $query = "SELECT link, ID
                   FROM images
                   INNER JOIN event ON event.eventID = images.eventID
                   WHERE Eventname = '$eventname' AND userID = $userID";
-      //execute the query
-      $result = mysqli_query($mysqli, $query);
+        //execute the query
+        $result = mysqli_query($mysqli, $query);
 
-      // loop door alle rijen dat heen
-      // make an if loop to check if there is something inside the query
-      if (!$result) {
-        echo "<h2>There are on event yet...<h2>";
-      } else {
-        while ($row = mysqli_fetch_array($result)) {
-      ?>
-          <input type="checkbox" name="<?php echo 'photo[]' ?>" id="<?php echo $row['ID'] ?>" value="<?php echo $row['ID'] ?>">
-          <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" style="width: 100px;" for="<?php echo $row['ID'] ?>"></input>
+        // loop door alle rijen dat heen
+        // make an if loop to check if there is something inside the query
+        if (!$result) {
+          echo "<h2>There are on event yet...<h2>";
+        } else {
+          while ($row = mysqli_fetch_array($result)) {
+        ?>
+            <div class="Tile">
+              <input type="checkbox" name="<?php echo 'photo[]' ?>" id="<?php echo $row['ID'] ?>" value="<?php echo $row['ID'] ?>">
+              <label for="<?php echo $row['ID'] ?>">
+                <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" for="<?php echo $row['ID'] ?>" alt="" srcset="">
+              </label>
+            </div>
 
-      <?php
+        <?php
+          }
         }
-      }
-      ?>
-    </div>
+        ?>
+      </div>
 
-    <input type="submit" name="submit" value="delete" id="submit">
-  </form>
+      <input class="deletePhotoBtn" type="submit" name="submit" value="verwijder" id="submit">
+    </form>
+  </main>
 </body>
 
 </html>
@@ -82,6 +88,5 @@ if (isset($_POST['submit'])) {
   }
 
   header("Location:index.php");
-
 }
 ?>

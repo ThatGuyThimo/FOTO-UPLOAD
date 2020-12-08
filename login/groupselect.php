@@ -188,8 +188,6 @@ require('../includes/config.inc.php');
       echo "<script>alert('Groupname already exists');</script>";
       echo "<script>window.location.href='groupselect.php'</script>";
     }
-
-    
   }
   ?>
 </body>

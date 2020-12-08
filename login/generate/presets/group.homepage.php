@@ -33,6 +33,7 @@ if ($check == false) {
 
 <head>
   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../../style/output/style.min.css">
   <script src="../../../assets/js/fontawesome.js"></script>
   <title><?php echo $groupname; ?></title>

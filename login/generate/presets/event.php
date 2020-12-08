@@ -45,7 +45,7 @@ $userID = $_SESSION["userID"];
       <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
     </div>
   </div>
-  <div class="photo's">
+  <div class="photos">
     <!-- show all the pictures inside the folder -->
     <?php
     // query every userid in relation with the group
@@ -63,15 +63,18 @@ $userID = $_SESSION["userID"];
     } else {
       while ($row = mysqli_fetch_array($result)) {
     ?>
-        <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="" style="width: 50px;">
+        <div class="Tile">
+          <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
+          <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
+        </div>
     <?php
       }
     }
     ?>
   </div>
-  <form method="post" enctype="multipart/form-data">
-    <input type="file" name="photo[]" id="photo" multiple>
-    <input type="submit" name="submit" id="submit">
+  <form class="fotoForm" method="post" enctype="multipart/form-data">
+    <input class="fotoInput" type="file" name="photo[]" id="photo" multiple>
+    <input class="fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
   </form>
 </body>
 

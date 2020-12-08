@@ -28,6 +28,10 @@ main {
 }
 a {
   text-decoration: none;
+  color: var(--text);
+  &:hover {
+    text-decoration: underline;
+  }
 }
 li {
   list-style-type: none;
@@ -38,11 +42,13 @@ input {
 svg {
   font-size: 2em !important;
   margin-left: .4em !important;
+  color: #f1f1f1 !important;
 }
 // ========================
 // components
 // ========================
 @import "./components/Banner";
+@import "./components/deleteGroup";
 
 // ========================
 // pages
@@ -52,3 +58,4 @@ svg {
 @import "./pages/error";
 @import "./pages/groupselect";
 @import "./pages/eventselect";
+@import "./pages/fotoUploading";

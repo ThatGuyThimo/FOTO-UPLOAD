@@ -1,0 +1,20 @@
+.centerIt {
+  @include Center;
+  margin: 4em 0;
+  justify-content: space-around;
+  height: 80vh;
+  flex-direction: column;
+  h2 {
+    width: 80%;
+  }
+  .deleteButton {
+    margin: $defPadding;
+    .deleteBtn {
+      @include ButtonStyle(var(--Pri-Color));
+    }
+  }
+  .Btn {
+    @include ButtonStyle(var(--Pri-Color));
+    width: max-content;
+  }
+}

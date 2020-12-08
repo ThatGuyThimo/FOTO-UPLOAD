@@ -741,3 +741,87 @@ form .EventInput {
   outline: none;
   cursor: pointer;
 }
+
+.formPhotoEdit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80%;
+}
+
+.formPhotoEdit .photosEdit {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  margin: 3em 0;
+  width: 100%;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 50vh;
+  scrollbar-width: thin;
+}
+
+.formPhotoEdit .photosEdit .Tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formPhotoEdit .photosEdit .Tile img {
+  width: 195px;
+  height: 195px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.formPhotoEdit .photosEdit .Tile img:hover {
+  cursor: pointer;
+}
+
+.formPhotoEdit .photosEdit .Tile input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.formPhotoEdit .photosEdit .Tile input[type="checkbox"]:checked ~ label img {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+}
+
+.formPhotoEdit .deletePhotoBtn {
+  background-color: var(--Pri-Color) !important;
+  color: #f1f1f1;
+  border-radius: 100px;
+  border: none;
+  padding: 0.4rem 2rem;
+  margin: auto;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.formPhotoEdit .deletePhotoBtn:hover, .formPhotoEdit .deletePhotoBtn:focus {
+  outline: none;
+  cursor: pointer;
+}

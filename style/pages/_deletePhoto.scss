@@ -1,0 +1,41 @@
+.formPhotoEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+  .photosEdit {
+    display: grid;
+    justify-items: center;
+    margin: 3em 0;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 50vh;
+    scrollbar-width: thin;
+    .Tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        $size: 195px;
+        width: $size;
+        height: $size;
+        object-fit: contain;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      input[type="checkbox"] {
+        appearance: none;
+        &:checked ~ label img {
+          filter: brightness(0.8);
+        }
+      }
+    }
+  }
+  .deletePhotoBtn {
+    @include ButtonStyle(var(--Pri-Color));
+  }
+}

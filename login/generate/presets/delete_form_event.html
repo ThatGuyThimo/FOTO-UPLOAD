@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verwijder Event</title>
+    <link rel="stylesheet" href="../../../style/output/style.css" />
+    <script src="../../../assets/js/fontawesome.js"></script>
+    <script defer="defer" src="event_ajax.js"></script>
+  </head>
+  <body>
+    <div class="Banner">
+      <div class="header">Event verwijderen</div>
+    </div>
+    <main>
+      <div class="centerIt">
+        <h1>Weet je zeker dat je de Event wilt verwijderen?</h1>
+        <div class="deleteButton">
+          <button class="deleteBtn" id="delete" onclick="delete2()">
+            Verwijder Event
+          </button>
+          <button class="terugBtn" onclick="window.history.back();">Terug</button>
+        </div>
+      </div>
+    </main>
+    <div id="resultaat"></div>
+  </body>
+</html>

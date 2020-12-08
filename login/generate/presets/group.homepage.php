@@ -141,6 +141,9 @@ if ($check == false) {
 
     $indextext = file_get_contents("../../generate/presets/event.php");
     $deletetext = file_get_contents("../../generate/presets/deletePhotos.php");
+    $deleteevent = file_get_contents("../../generate/presets/delete_form_event.html");
+    $deleteeventphp = file_get_contents("../../generate/presets/delete_event.php");
+    $deleteeventajax = file_get_contents("../../generate/presets/event_ajax.js");
 
     // create index.html in the specified path
     $create_file = fopen($path . "index.php", "w");
@@ -150,6 +153,21 @@ if ($check == false) {
     // create index.html in the specified path
     $create_file = fopen($path . "deletePhotos.php", "w");
     fwrite($create_file, $deletetext);
+    fclose($create_file);
+
+    // create delete_form_event.html in the specified path
+    $create_file = fopen($path . "delete_form_event.html", "w");
+    fwrite($create_file, $deleteevent);
+    fclose($create_file);
+
+    // create delete_event.php in the specified path
+    $create_file = fopen($path . "delete_event.php", "w");
+    fwrite($create_file, $deleteeventphp);
+    fclose($create_file);
+
+    // create event_ajax.js in the specified path
+    $create_file = fopen($path . "event_ajax.js", "w");
+    fwrite($create_file, $deleteeventajax);
     fclose($create_file);
 
     // send the user to the new page

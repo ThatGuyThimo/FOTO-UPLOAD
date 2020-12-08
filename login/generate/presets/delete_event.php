@@ -1,17 +1,17 @@
 <?php
-require('../../../includes/config.inc.php');
+require('../../../../../includes/config.inc.php');
 $DIR = basename(__DIR__);
+$delete_images = mysqli_query($mysqli, "DELETE FROM `images` WHERE eventID IN (SELECT eventID FROM `event` WHERE Eventname = '$DIR')");
+$delete_images;
+$delete_events = mysqli_query($mysqli, "DELETE FROM `events` WHERE eventID = (SELECT eventID FROM `event` WHERE Eventname = '$DIR')");
+$delete_event = mysqli_query($mysqli, "DELETE FROM `event` WHERE Eventname = '$DIR'");
 delete_files(__DIR__);
-$result = mysqli_query($mysqli, "DELETE FROM groups WHERE `Groupname` = '$DIR' ");
+
 /* 
  * php delete function that deals with directories recursively
  */
 
-if (mysqli_num_rows($result) !== NULL) {
-    echo 'deleted';
-} else {
-    echo 'Geen resultaat gevonden';
-}
+
 
 function delete_files($target) {
     if(is_dir($target)){

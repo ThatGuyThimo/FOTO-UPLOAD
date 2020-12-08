@@ -30,7 +30,7 @@
       input[type="checkbox"] {
         appearance: none;
         &:checked ~ label img {
-          filter: brightness(0.8);
+          filter: brightness(0.4);
         }
       }
     }

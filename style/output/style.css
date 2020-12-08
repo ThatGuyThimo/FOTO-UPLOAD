@@ -801,8 +801,8 @@ form .EventInput {
 }
 
 .formPhotoEdit .photosEdit .Tile input[type="checkbox"]:checked ~ label img {
-  -webkit-filter: brightness(0.8);
-          filter: brightness(0.8);
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4);
 }
 
 .formPhotoEdit .deletePhotoBtn {

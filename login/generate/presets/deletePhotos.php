@@ -4,19 +4,7 @@ require('../../../../../includes/config.inc.php');
 session_start();
 // check if the user is loggedin
 
-$groupname = basename(__DIR__);
-
-$compare = "SELECT Username
-            FROM user
-            JOIN users ON users.userID = user.userID
-            JOIN groups ON groups.groupID = users.groupID
-            WHERE groupname = '$groupname'";
-
-$acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
-// if (!$_SESSION['Username'] == $acces['Username']) {
-//   header("Location:../../inlog.php");
-//   exit;
-// }
+$eventname = basename(__DIR__);
 
 $userID = $_SESSION["userID"];
 ?>

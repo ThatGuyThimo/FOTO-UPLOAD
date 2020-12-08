@@ -1,17 +1,18 @@
 <?php
 require('../../../includes/config.inc.php');
 $DIR = basename(__DIR__);
-delete_files(__DIR__);
+var_dump($DIR);
+$delete = mysqli_query($mysqli, "DELETE FROM `images` WHERE eventID = (SELECT eventID FROM events WHERE groupID = (SELECT groupID FROM groups WHERE Groupname = '$DIR'))");
+$delete2 = mysqli_query($mysqli, "DELETE FROM `events` WHERE groupID = (SELECT groupID FROM groups WHERE Groupname = '$DIR')");
 $result = mysqli_query($mysqli, "DELETE FROM groups WHERE `Groupname` = '$DIR' ");
+var_dump($delete);
+delete_files(__DIR__);
 /* 
  * php delete function that deals with directories recursively
  */
-
-if (mysqli_num_rows($result) !== NULL) {
-    echo 'deleted';
-} else {
-    echo 'Geen resultaat gevonden';
-}
+mysqli_num_rows($delete);
+mysqli_num_rows($delete2);
+mysqli_num_rows($result);
 
 function delete_files($target) {
     if(is_dir($target)){

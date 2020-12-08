@@ -13,10 +13,10 @@ $compare = "SELECT Username
             WHERE groupname = '$groupname'";
 
 $acces = mysqli_fetch_array(mysqli_query($mysqli, $compare));
-if (!$_SESSION['Username'] == $acces['Username']) {
-  header("Location:../../inlog.php");
-  exit;
-}
+// if (!$_SESSION['Username'] == $acces['Username']) {
+//   header("Location:../../inlog.php");
+//   exit;
+// }
 
 
 //read the config-file

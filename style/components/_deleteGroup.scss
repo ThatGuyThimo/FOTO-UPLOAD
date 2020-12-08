@@ -12,6 +12,10 @@
     .deleteBtn {
       @include ButtonStyle(var(--Pri-Color));
     }
+    .terugBtn {
+      @include ButtonStyle(var(--Acc-Color2));
+      margin: 2em 0;
+    }
   }
   .Btn {
     @include ButtonStyle(var(--Pri-Color));

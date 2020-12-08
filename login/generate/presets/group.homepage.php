@@ -114,7 +114,7 @@ if ($check == false) {
     $GID = $groupID[0];
 
     // get the event id from the database
-    $geteventID = "SELECT eventID FROM event WHERE Eventname = '$Eventname'";
+    $geteventID = "SELECT eventID FROM event WHERE Eventname = '$Eventname' ORDER BY eventID DESC";
 
     $getID = mysqli_query($mysqli, $geteventID);
 

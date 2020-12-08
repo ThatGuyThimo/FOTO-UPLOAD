@@ -2,7 +2,7 @@
 session_start();
 // check if the user is loggedin
 if (!isset($_SESSION['Username']) || strlen($_SESSION['Username']) == 0) {
-  
+
   $groupname = basename(__DIR__);
 
   $compare = "SELECT userID
@@ -37,7 +37,11 @@ $groupname = basename(__DIR__);
 <body>
   <div class="Banner">
     <div class="header">Events</div>
-    <div><a href="delete_form.html"><i class="fal fa-folder-minus"></i></a></div>
+    <div>
+      <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+      <a href="../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
+    </div>
   </div>
   <main>
     <div class="groupList">
@@ -87,7 +91,7 @@ $groupname = basename(__DIR__);
 
   <?php
   if (isset($_POST['submit'])) {
-    
+
     // put the eventname inside a variable 
     $Eventname = $_POST['Eventname'];
 

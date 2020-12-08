@@ -16,12 +16,16 @@ require('../includes/config.inc.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/output/style.css">
+  <script src="../assets/js/fontawesome.js"></script>
   <title>Groepen maken</title>
 </head>
 
 <body>
   <div class="Banner">
     <div class="header">Groeps</div>
+    <div>
+      <div><a href="../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a></div>
+    </div>
   </div>
   <main>
     <div class="groupList">
@@ -151,7 +155,7 @@ require('../includes/config.inc.php');
     fwrite($create_file, $deletetext);
     fclose($create_file);
 
-        // create the delete page
+    // create the delete page
     $create_file = fopen($path . "delete.php", "w");
     fwrite($create_file, $deletetext);
     fclose($create_file);

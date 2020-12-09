@@ -37,7 +37,7 @@ $userID = $_SESSION['userID'];
 
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../../../../style/output/style.min.css">
   <script src="../../../../../assets/js/fontawesome.js"></script>
   <title><?php echo $eventname; ?></title>
@@ -47,10 +47,12 @@ $userID = $_SESSION['userID'];
   <div class="Banner">
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname; ?></div>
-    <div> 
+    <div>
       <a href="delete_form_event.html"><i class="fad fa-folder-minus"></i></a>
       <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
-      <i onclick="window.history.back();" style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
+      <a href="../../">
+        <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
+      </a>
       <a href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>

@@ -22,9 +22,11 @@ $userID = $_SESSION["userID"];
 <body>
   <div class="Banner">
     <!-- get the groupname and eventname -->
-    <div class="header"><?php echo $eventname . " - "; ?></div>
+    <div class="header"><?php echo $eventname ?></div>
     <div>
-      <i style="margin-right: 1.5em; cursor: pointer;" onclick="window.history.back();" class="fad fa-undo"></i>
+    <a href="../<?php echo $eventname?>">
+      <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
+    </a>
     </div>
   </div>
   <main>

@@ -17,7 +17,7 @@ require('../includes/config.inc.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/output/style.min.css">
   <script src="../assets/js/fontawesome.js"></script>
-  <title>Groepen maken</title>
+  <title>Groepen maken - JXT</title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@ require('../includes/config.inc.php');
         <div class="userList">
           <?php
           // query all users
-          $query = "SELECT userID, Username FROM user";
+          $query = "SELECT userID, Username FROM user ORDER BY Username";
 
           //execute the query
           $result = mysqli_query($mysqli, $query);
@@ -88,7 +88,6 @@ require('../includes/config.inc.php');
           <input type="submit" name="submit" value="Groep aanmaken" id="submit">
         </div>
     </form>
-
   </main>
   <?php
   if (isset($_POST['submit'])) {

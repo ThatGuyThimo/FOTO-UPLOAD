@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <meta charset="utf-8">
-    <title>Foto-album-Login</title>
+    <title>Login - JXT</title>
     <link rel="stylesheet" href="../style/output/style.min.css">
     <script type="text/javascript">
         const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

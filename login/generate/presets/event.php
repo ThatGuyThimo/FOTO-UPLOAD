@@ -48,12 +48,12 @@ $userID = $_SESSION['userID'];
     <!-- get the groupname and eventname -->
     <div class="header"><?php echo $eventname; ?></div>
     <div>
-      <a href="delete_form_event.html"><i class="fad fa-folder-minus"></i></a>
-      <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
+      <a title="verwijder event" href="delete_form_event.html"><i class="fad fa-folder-minus"></i></a>
+      <a title="verwijder foto's" href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
       <a href="../../">
         <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       </a>
-      <a href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
+      <a title="log uit" href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>
   <div class="photos">

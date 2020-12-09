@@ -43,11 +43,11 @@ if ($check == false) {
   <div class="Banner">
     <div class="header">Events</div>
     <div>
-      <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
-      <a href="../../groupselect.php">
+      <a title="verwijder groep" href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+      <a title="terug" href="../../groupselect.php">
         <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       </a>
-      <a href="../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
+      <a title="log uit" href="../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>
   <main>

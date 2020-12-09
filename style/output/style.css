@@ -2,6 +2,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: #f1f1f1;
+    --backgroundSVG: #d4d4d4;
     --bannerColor: #1a8269;
     --text: #0f0f0f;
     --inputClr: #e2e2e2;
@@ -21,6 +22,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f0f0f;
+    --backgroundSVG: #202020;
     --bannerColor: #1d483e;
     --text: #f1f1f1;
     --inputClr: #525252;
@@ -66,6 +68,7 @@ main {
 a {
   text-decoration: none;
   color: var(--text);
+  outline: none;
 }
 
 a:hover {
@@ -90,6 +93,13 @@ svg {
   svg {
     font-size: 2em !important;
   }
+}
+
+.BackgroundSVG {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  z-index: -5;
 }
 
 .Banner {
@@ -545,8 +555,8 @@ svg {
 form {
   margin: 3rem 1.5rem;
   position: absolute;
-  background-color: var(--background);
   bottom: -40px;
+  background-color: transparent;
   width: 90%;
 }
 

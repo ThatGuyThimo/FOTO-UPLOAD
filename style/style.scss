@@ -29,6 +29,7 @@ main {
 a {
   text-decoration: none;
   color: var(--text);
+  outline: none;
   &:hover {
     text-decoration: underline;
   }
@@ -46,6 +47,12 @@ svg {
   @media screen and (min-width: 1280px) {
     font-size: 2em !important;
   }
+}
+.BackgroundSVG {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  z-index: -5;
 }
 // ========================
 // components

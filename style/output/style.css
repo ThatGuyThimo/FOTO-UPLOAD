@@ -87,6 +87,7 @@ svg {
   font-size: 1.5em !important;
   margin-left: 0.4em !important;
   color: #f1f1f1 !important;
+  outline: none;
 }
 
 @media screen and (min-width: 1280px) {
@@ -186,7 +187,7 @@ svg {
 }
 
 .centerIt .deleteButton .deleteBtn {
-  background-color: var(--Pri-Color) !important;
+  background-color: #ff4c4c !important;
   color: #f1f1f1;
   border-radius: 100px;
   border: none;
@@ -207,7 +208,7 @@ svg {
 }
 
 .centerIt .deleteButton .terugBtn {
-  background-color: var(--Acc-Color2) !important;
+  background-color: var(--Pri-Color) !important;
   color: #f1f1f1;
   border-radius: 100px;
   border: none;

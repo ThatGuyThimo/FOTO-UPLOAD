@@ -46,8 +46,8 @@ $userID = $_SESSION['userID'];
 <body>
   <div class="Banner">
     <!-- get the groupname and eventname -->
-    <div class="header"><?php echo $eventname . " - "; ?></div>
-    <div>
+    <div class="header"><?php echo $eventname; ?></div>
+    <div> 
       <a href="delete_form_event.html"><i class="fad fa-folder-minus"></i></a>
       <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
       <i onclick="window.history.back();" style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>

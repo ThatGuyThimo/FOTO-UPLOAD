@@ -22,10 +22,16 @@
   }
 }
 .fotoForm {
+  input[type="file"] {
+    + label {
+      cursor: pointer;
+    }
+  }
   .fotoInput {
     margin: 3em 0;
+    cursor: pointer;
   }
-    .fotoSubmit {
-      @include ButtonStyle(var(--Pri-Color));
-    }
+  .fotoSubmit {
+    @include ButtonStyle(var(--Pri-Color));
+  }
 }

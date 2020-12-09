@@ -40,9 +40,12 @@ input {
   border-radius: $inputRadius;
 }
 svg {
-  font-size: 2em !important;
-  margin-left: .4em !important;
+  font-size: 1.5em !important;
+  margin-left: 0.4em !important;
   color: #f1f1f1 !important;
+  @media screen and (min-width: 1280px) {
+    font-size: 2em !important;
+  }
 }
 // ========================
 // components

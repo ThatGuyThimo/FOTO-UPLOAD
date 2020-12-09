@@ -85,7 +85,7 @@ $userID = $_SESSION['userID'];
   </div>
   <main>
     <form class="fotoForm" method="post" enctype="multipart/form-data">
-      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple>
+      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple required>
       <input class="fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
     </form>
   </main>

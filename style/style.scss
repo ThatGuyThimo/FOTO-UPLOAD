@@ -5,7 +5,8 @@
 @import "./src/variables";
 @import "./src/root";
 @import "./src/mixins";
-
+// ==================================================
+// General Styling stuff
 * {
   margin: 0;
   padding: 0;
@@ -40,6 +41,9 @@ li {
 input {
   border-radius: $inputRadius;
 }
+// ==================================================
+
+// Icons in the banner
 svg {
   font-size: 1.5em !important;
   margin-left: 0.4em !important;
@@ -48,20 +52,22 @@ svg {
     font-size: 2em !important;
   }
 }
+// Background wave 
 .BackgroundSVG {
   position: absolute;
-  width: 100vw;
+  height: 50vh;
   bottom: 0;
+  right: 0;
   z-index: -5;
 }
 // ========================
-// components
+// components - names speak for themselves
 // ========================
 @import "./components/Banner";
 @import "./components/deleteGroup";
 
 // ========================
-// pages
+// pages - names speak for themselves
 // ========================
 @import "./pages/home";
 @import "./pages/inlog";

@@ -1,3 +1,4 @@
+// Dark & light theme variables  aka toggle
 @media (prefers-color-scheme: light) {
   :root {
     --background: #{Color(BackgroundLight)};

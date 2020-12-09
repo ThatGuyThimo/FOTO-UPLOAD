@@ -97,8 +97,9 @@ svg {
 
 .BackgroundSVG {
   position: absolute;
-  width: 100vw;
+  height: 50vh;
   bottom: 0;
+  right: 0;
   z-index: -5;
 }
 

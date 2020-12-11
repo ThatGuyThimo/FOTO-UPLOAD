@@ -5,6 +5,11 @@ session_start();
 // check if the user is loggedin
 
 $groupname = basename(__DIR__);
+$userID = $_SESSION['userID'];
+$ownercheck = "SELECT userID FROM groups WHERE groupname = '$groupname'";
+
+// $kaas = mysqli_query($mysqli, $ownercheck);
+// var_dump($kaas);
 
 $compare = "SELECT Username
             FROM user
@@ -43,7 +48,10 @@ if ($check == false) {
   <div class="Banner">
     <div class="header">Events</div>
     <div>
-      <a title="verwijder groep" href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+    <?php if (mysqli_query($mysqli, $ownercheck) == $userID)
+      { ?>
+      <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+      <?php } else {print_r('kaas');}?>
       <a title="terug" href="../../groupselect.php">
         <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       </a>

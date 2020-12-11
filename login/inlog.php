@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <title>Login - JXT</title>
     <link rel="stylesheet" href="../style/output/style.min.css">
+    <script src="../assets/js/fontawesome.js"></script>
     <script type="text/javascript">
         const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -23,6 +24,9 @@
 <body>
     <div class="Banner">
         <div class="header">Inloggen</div>
+        <div>
+            <a href="../"><i class="fad fa-home-lg"></i></a>
+        </div>
     </div>
     <main>
         <div class="inlogdiv">

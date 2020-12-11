@@ -5,6 +5,12 @@ session_start();
 // check if the user is loggedin
 
 $groupname = basename(__DIR__);
+$usertest = $_SESSION['userID'];
+$ownercheck = "SELECT userID FROM groups WHERE Groupname = '$groupname'";
+$owner = mysqli_query($mysqli, $ownercheck);
+
+// $kaas = mysqli_query($mysqli, $ownercheck);
+// var_dump($kaas);
 
 $compare = "SELECT Username
             FROM user
@@ -43,7 +49,13 @@ if ($check == false) {
   <div class="Banner">
     <div class="header">Events</div>
     <div>
-      <a title="verwijder groep" href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+    <?php
+      //this is terrible code and formating.... too bad!
+      while ($row = $owner->fetch_assoc()) {
+      if ($row['userID'] == $usertest)  
+      {?>
+      <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+      <?php }}?>
       <a title="terug" href="../../groupselect.php">
         <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       </a>

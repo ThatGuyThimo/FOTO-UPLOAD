@@ -68,7 +68,7 @@ if ($check == false) {
         // loop door alle rijen dat heen
         // make an if loop to check if there is something inside the query
         if (!$result) {
-          echo "<h2>There are on event yet...<h2>";
+          echo "<h2>There are no event yet...<h2>";
         } else {
           while ($row = mysqli_fetch_array($result)) {
         ?>

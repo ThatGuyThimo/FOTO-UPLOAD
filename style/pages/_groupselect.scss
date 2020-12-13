@@ -21,7 +21,14 @@
         background-color: var(--Input-Color);
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
+        @media screen and (min-width: 520px) {
+          flex-direction: row;
+        }
         .group {
+          &:last-child {
+            filter: brightness(76%);
+          }
           color: var(--text);
         }
       }

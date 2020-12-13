@@ -19,7 +19,7 @@ $check = false;
 while ($names = mysqli_fetch_array($acces)) {
   if (strtolower($_SESSION['Username']) == strtolower($names['Username'])) {
     $check = true;
-  } else if($check != true){
+  } else if ($check != true) {
     $check = false;
   }
 }
@@ -38,19 +38,23 @@ $userID = $_SESSION['userID'];
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../../../../style/output/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../../../style/output/style.min.css">
   <script src="../../../../../assets/js/fontawesome.js"></script>
-  <title><?php echo $eventname; ?></title>
+  <title><?php echo $eventname; ?> - JXT</title>
 </head>
 
 <body>
   <div class="Banner">
     <!-- get the groupname and eventname -->
-    <div class="header"><?php echo $eventname . " - "; ?></div>
+    <div class="header"><?php echo $eventname; ?></div>
     <div>
-      <a href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
-      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
-      <a href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
+      <a title="verwijder event" href="delete_form_event.html"><i class="fad fa-folder-minus"></i></a>
+      <a title="verwijder foto's" href="deletePhotos.php"><i class="fad fa-sliders-h"></i></a>
+      <a href="../../">
+        <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
+      </a>
+      <a title="log uit" href="../../../../../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a>
     </div>
   </div>
   <div class="photos">
@@ -71,10 +75,10 @@ $userID = $_SESSION['userID'];
     } else {
       while ($row = mysqli_fetch_array($result)) {
     ?>
-    <div class="Tile">
-      <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
-      <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
-    </div>
+        <div class="Tile">
+          <img src="<?php echo "../$eventname/photos/" . $row['link']; ?>" alt="" srcset="">
+          <a href="<?php echo "../$eventname/photos/" . $row['link']; ?>">Bekijk afbeelding</a>
+        </div>
     <?php
       }
     }
@@ -82,10 +86,11 @@ $userID = $_SESSION['userID'];
   </div>
   <main>
     <form class="fotoForm" method="post" enctype="multipart/form-data">
-      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple>
+      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple required>
       <input class="fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
     </form>
   </main>
+  <svg class="BackgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="var(--backgroundSVG)" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
 </body>
 

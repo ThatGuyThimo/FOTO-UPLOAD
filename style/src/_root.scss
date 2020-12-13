@@ -1,6 +1,8 @@
+// Dark & light theme variables  aka toggle
 @media (prefers-color-scheme: light) {
   :root {
     --background: #{Color(BackgroundLight)};
+    --backgroundSVG: #{Color(BackgroundLight-SVG)};
     --bannerColor: #{Color(BannerColorLight)};
     --text: #{Color(TextLight)};
     // colors
@@ -21,6 +23,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #{Color(BackgroundDark)};
+    --backgroundSVG: #{Color(BackgroundDark-SVG)};
     --bannerColor: #{Color(BannerColorDark)};
     --text: #{Color(TextDark)};
     // colors

@@ -2,6 +2,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: #f1f1f1;
+    --backgroundSVG: #ebebeb;
     --bannerColor: #1a8269;
     --text: #0f0f0f;
     --inputClr: #e2e2e2;
@@ -21,6 +22,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f0f0f;
+    --backgroundSVG: #202020;
     --bannerColor: #1d483e;
     --text: #f1f1f1;
     --inputClr: #525252;
@@ -66,6 +68,7 @@ main {
 a {
   text-decoration: none;
   color: var(--text);
+  outline: none;
 }
 
 a:hover {
@@ -81,9 +84,24 @@ input {
 }
 
 svg {
-  font-size: 2em !important;
-  margin-left: .4em !important;
+  font-size: 1.5em !important;
+  margin-left: 0.4em !important;
   color: #f1f1f1 !important;
+  outline: none;
+}
+
+@media screen and (min-width: 1280px) {
+  svg {
+    font-size: 2em !important;
+  }
+}
+
+.BackgroundSVG {
+  position: absolute;
+  height: 50vh;
+  bottom: 0;
+  right: 0;
+  z-index: -5;
 }
 
 .Banner {
@@ -104,7 +122,13 @@ svg {
   font-weight: 800;
   color: #f1f1f1;
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.28rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .Banner .header {
+    font-size: 1.6rem;
+  }
 }
 
 .Banner .btn {
@@ -163,7 +187,7 @@ svg {
 }
 
 .centerIt .deleteButton .deleteBtn {
-  background-color: var(--Pri-Color) !important;
+  background-color: #ff4c4c !important;
   color: #f1f1f1;
   border-radius: 100px;
   border: none;
@@ -184,7 +208,7 @@ svg {
 }
 
 .centerIt .deleteButton .terugBtn {
-  background-color: var(--Acc-Color2) !important;
+  background-color: var(--Pri-Color) !important;
   color: #f1f1f1;
   border-radius: 100px;
   border: none;
@@ -533,8 +557,8 @@ svg {
 form {
   margin: 3rem 1.5rem;
   position: absolute;
-  background-color: var(--background);
   bottom: -40px;
+  background-color: transparent;
   width: 90%;
 }
 
@@ -717,8 +741,13 @@ form .EventInput {
      object-fit: contain;
 }
 
+.fotoForm input[type="file"] + label {
+  cursor: pointer;
+}
+
 .fotoForm .fotoInput {
   margin: 3em 0;
+  cursor: pointer;
 }
 
 .fotoForm .fotoSubmit {
@@ -801,8 +830,8 @@ form .EventInput {
 }
 
 .formPhotoEdit .photosEdit .Tile input[type="checkbox"]:checked ~ label img {
-  -webkit-filter: brightness(0.8);
-          filter: brightness(0.8);
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4);
 }
 
 .formPhotoEdit .deletePhotoBtn {

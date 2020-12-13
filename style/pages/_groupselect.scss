@@ -19,7 +19,16 @@
         padding: $defPadding;
         margin: 1rem 0;
         background-color: var(--Input-Color);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        @media screen and (min-width: 520px) {
+          flex-direction: row;
+        }
         .group {
+          &:last-child {
+            filter: brightness(76%);
+          }
           color: var(--text);
         }
       }
@@ -29,8 +38,8 @@
 form {
   margin: $formMargin;
   position: absolute;
-  background-color: var(--background);
   bottom: -40px;
+  background-color: transparent;
   width: 90%;
   @media screen and (min-width: 1280px) {
     width: 40vw;

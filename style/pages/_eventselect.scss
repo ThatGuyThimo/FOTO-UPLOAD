@@ -16,7 +16,16 @@
         padding: $defPadding;
         margin: 1rem 0;
         background-color: var(--Input-Color);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media screen and (min-width: 520px) {
+          flex-direction: row;
+        } 
         .event {
+          &:last-child {
+            filter: brightness(76%);
+          }
           color: var(--text);
         }
       }

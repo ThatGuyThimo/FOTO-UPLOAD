@@ -31,6 +31,9 @@
     cursor: pointer;
   }
 }
+// ===============================
+// Center - no matter what
+// ===============================
 @mixin Center {
   display: flex;
   justify-content: center;
@@ -38,6 +41,10 @@
   text-align: center;
   height: 100%;
 }
+
+// ===============================
+// text input - input
+// ===============================
 @mixin InputStyle {
   padding: $formPadding;
   font-size: $defFontSize;
@@ -48,6 +55,9 @@
   width: 100%;
 }
 
+// ===============================
+// buttons - users
+// ===============================
 @mixin selectUser {
   margin: 4em 0;
   padding: 0.3em 1em;

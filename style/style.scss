@@ -5,7 +5,8 @@
 @import "./src/variables";
 @import "./src/root";
 @import "./src/mixins";
-
+// ==================================================
+// General Styling stuff
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +30,7 @@ main {
 a {
   text-decoration: none;
   color: var(--text);
+  outline: none;
   &:hover {
     text-decoration: underline;
   }
@@ -39,19 +41,34 @@ li {
 input {
   border-radius: $inputRadius;
 }
+// ==================================================
+
+// Icons in the banner
 svg {
-  font-size: 2em !important;
-  margin-left: .4em !important;
+  font-size: 1.5em !important;
+  margin-left: 0.4em !important;
   color: #f1f1f1 !important;
+  outline: none;
+  @media screen and (min-width: 1280px) {
+    font-size: 2em !important;
+  }
+}
+// Background wave 
+.BackgroundSVG {
+  position: absolute;
+  height: 50vh;
+  bottom: 0;
+  right: 0;
+  z-index: -5;
 }
 // ========================
-// components
+// components - names speak for themselves
 // ========================
 @import "./components/Banner";
 @import "./components/deleteGroup";
 
 // ========================
-// pages
+// pages - names speak for themselves
 // ========================
 @import "./pages/home";
 @import "./pages/inlog";

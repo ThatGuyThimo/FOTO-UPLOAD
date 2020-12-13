@@ -18,19 +18,18 @@ function InitAJAX() {
     return objxml;
 }
 
-
-function zoek1(myName) 
+function delete2(myName) 
 {
     var xmlHttp = InitAJAX();
 
 
-    var url = `delete.php`;
+    var url = `delete_event.php`;
 
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             const result = xmlHttp.responseText;
 
-            window.location.replace("../../groupselect.php");
+            window.location.replace("../../index.php");
             // document.getElementById('resultaat').innerHTML = result;
         }
     }

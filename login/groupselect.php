@@ -15,16 +15,16 @@ require('../includes/config.inc.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style/output/style.css">
+  <link rel="stylesheet" href="../style/output/style.min.css">
   <script src="../assets/js/fontawesome.js"></script>
-  <title>Groepen maken</title>
+  <title>Groepen maken - JXT</title>
 </head>
 
 <body>
   <div class="Banner">
     <div class="header">Groeps</div>
     <div>
-      <div><a href="../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a></div>
+      <div><a title="log uit" href="../includes/logout.inc.php"><i class="fad fa-sign-out-alt"></i></a></div>
     </div>
   </div>
   <main>
@@ -34,7 +34,7 @@ require('../includes/config.inc.php');
         <?php
         // query every userid in relation with the group
         $userID = $_SESSION['userID'];
-        $query = "SELECT Groupname 
+        $query = "SELECT Groupname, groupDate  
               FROM groups
               WHERE groupID IN (SELECT groupID
                               FROM users
@@ -45,13 +45,20 @@ require('../includes/config.inc.php');
         // loop door alle rijen dat heen
         while ($row = mysqli_fetch_array($result)) {
         ?>
-        <a href="groups/<?php echo $row['Groupname'] ?>">
-          <div class="groupItem">
-            <div class="group">
-              <?php echo $row['Groupname'] ?>
+          <a href="groups/<?php echo $row['Groupname'] ?>">
+            <div class="groupItem">
+              <div class="group">
+                <?php echo $row['Groupname'] ?>
+              </div>
+              <div class="group">
+                <?php echo $row['groupDate'] ?>
+                <?php
+                // $groupDate = time();
+                // echo  date('D, d M Y - h:i', $groupDate);
+                ?>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
         <?php
         }
         ?>
@@ -65,7 +72,7 @@ require('../includes/config.inc.php');
         <div class="userList">
           <?php
           // query all users
-          $query = "SELECT userID, Username FROM user";
+          $query = "SELECT userID, Username FROM user ORDER BY Username";
 
           //execute the query
           $result = mysqli_query($mysqli, $query);
@@ -73,13 +80,12 @@ require('../includes/config.inc.php');
           // show all the users
           while ($row = mysqli_fetch_array($result)) {
           ?>
-          <div class="userItem">
-            <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>"
-              id="<?php echo $row['userID'] ?>">
-            <label for="<?php echo $row['userID'] ?>">
-              <?php echo $row['Username'] ?>
-            </label>
-          </div>
+            <div class="userItem">
+              <input class="input" type="checkbox" name="<?php echo 'member[]' ?>" value="<?php echo $row['userID'] ?>" id="<?php echo $row['userID'] ?>">
+              <label for="<?php echo $row['userID'] ?>">
+                <?php echo $row['Username'] ?>
+              </label>
+            </div>
           <?php
           }
           ?>
@@ -88,8 +94,10 @@ require('../includes/config.inc.php');
           <input type="submit" name="submit" value="Groep aanmaken" id="submit">
         </div>
     </form>
-
   </main>
+  <svg class="BackgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="var(--backgroundSVG)" fill-opacity="1" d="M0,64L26.7,74.7C53.3,85,107,107,160,128C213.3,149,267,171,320,176C373.3,181,427,171,480,144C533.3,117,587,75,640,69.3C693.3,64,747,96,800,96C853.3,96,907,64,960,74.7C1013.3,85,1067,139,1120,144C1173.3,149,1227,107,1280,101.3C1333.3,96,1387,128,1413,144L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path>
+  </svg>
   <?php
   if (isset($_POST['submit'])) {
 
@@ -102,8 +110,9 @@ require('../includes/config.inc.php');
 
     // check if the group name already exists
     if (mysqli_num_rows($testquery) == 0) {
-        // insert the group name and id and who made the group
-      $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL)";
+      // insert the group name and id and who made the group
+      // $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL, current_timestamp())";
+      $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL, current_timestamp())";
 
       $execute = mysqli_query($mysqli, $groupQuery);
 

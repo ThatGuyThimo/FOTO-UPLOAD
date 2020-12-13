@@ -13,17 +13,20 @@ $userID = $_SESSION["userID"];
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../../../../style/output/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../../../style/output/style.min.css">
   <script src="../../../../../assets/js/fontawesome.js"></script>
-  <title><?php echo $eventname; ?></title>
+  <title><?php echo $eventname; ?> - JXT</title>
 </head>
 
 <body>
   <div class="Banner">
     <!-- get the groupname and eventname -->
-    <div class="header"><?php echo $eventname . " - "; ?></div>
+    <div class="header"><?php echo $eventname ?></div>
     <div>
-      <a href="#" onclick="window.history.back();" style="margin-right: 1.5em;"><i class="fad fa-undo"></i></a>
+    <a href="../<?php echo $eventname?>">
+      <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
+    </a>
     </div>
   </div>
   <main>

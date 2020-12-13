@@ -10,10 +10,10 @@
   .deleteButton {
     margin: $defPadding;
     .deleteBtn {
-      @include ButtonStyle(var(--Pri-Color));
+      @include ButtonStyle(Color(accClrDark2));
     }
     .terugBtn {
-      @include ButtonStyle(var(--Acc-Color2));
+      @include ButtonStyle(var(--Pri-Color));
       margin: 2em 0;
     }
   }

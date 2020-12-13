@@ -49,13 +49,13 @@ if ($check == false) {
   <div class="Banner">
     <div class="header">Events</div>
     <div>
-    <?php
+      <?php
       //this is terrible code and formating.... too bad!
       while ($row = $owner->fetch_assoc()) {
-      if ($row['userID'] == $usertest)  
-      {?>
-      <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
-      <?php }}?>
+        if ($row['userID'] == $usertest) { ?>
+          <a href="delete_form.html"><i class="fad fa-folder-minus"></i></a>
+      <?php }
+      } ?>
       <a title="terug" href="../../groupselect.php">
         <i style="margin-right: 1.5em; cursor: pointer;" class="fad fa-undo"></i>
       </a>
@@ -89,6 +89,12 @@ if ($check == false) {
                 <div class="event">
                   <?php echo $row['Eventname'] ?>
                 </div>
+                <div class="event">
+                  <?php
+                  $groupDate = time();
+                  echo  date('D, d M Y - h:i', $groupDate);
+                  ?>
+                </div>
               </div>
             </a>
         <?php
@@ -107,7 +113,9 @@ if ($check == false) {
         </div>
     </form>
   </main>
-<svg class="BackgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="var(--backgroundSVG)" fill-opacity="1" d="M0,64L34.3,85.3C68.6,107,137,149,206,176C274.3,203,343,213,411,186.7C480,160,549,96,617,96C685.7,96,754,160,823,165.3C891.4,171,960,117,1029,101.3C1097.1,85,1166,107,1234,112C1302.9,117,1371,107,1406,101.3L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+  <svg class="BackgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="var(--backgroundSVG)" fill-opacity="1" d="M0,64L34.3,85.3C68.6,107,137,149,206,176C274.3,203,343,213,411,186.7C480,160,549,96,617,96C685.7,96,754,160,823,165.3C891.4,171,960,117,1029,101.3C1097.1,85,1166,107,1234,112C1302.9,117,1371,107,1406,101.3L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+  </svg>
   <?php
   if (isset($_POST['submit'])) {
 

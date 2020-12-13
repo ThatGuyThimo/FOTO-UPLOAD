@@ -1,8 +1,9 @@
 .formPhotoEdit {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100% !important;
   .photosEdit {
     display: grid;
     justify-items: center;
@@ -37,5 +38,7 @@
   }
   .deletePhotoBtn {
     @include ButtonStyle(Color(accClrDark2));
+    margin: 0 auto;
+    width: max-content;
   }
 }

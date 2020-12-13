@@ -29,6 +29,7 @@ if ($check == false) {
   exit;
 }
 
+mysqli_result();
 
 $userID = $_SESSION['userID'];
 ?>

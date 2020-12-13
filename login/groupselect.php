@@ -111,6 +111,15 @@ require('../includes/config.inc.php');
     // check if the group name already exists
     if (mysqli_num_rows($testquery) == 0) {
       // insert the group name and id and who made the group
+      $array = $_POST['member'];
+      foreach ($array as $member => $value) {
+        if ($value == NULL){
+          echo "<script>alert('No user('s) selected');</script>";
+        } else {
+        $createUsers = "INSERT INTO users VALUE($value, $GID)";
+        $done = mysqli_query($mysqli, $createUsers);
+        }
+      }
       // $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL, current_timestamp())";
       $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL, current_timestamp())";
 
@@ -126,11 +135,6 @@ require('../includes/config.inc.php');
       $GID = $groupID[0];
 
       // insert everu user into users with user id and group id
-      $array = $_POST['member'];
-      foreach ($array as $member => $value) {
-        $createUsers = "INSERT INTO users VALUE($value, $GID)";
-        $done = mysqli_query($mysqli, $createUsers);
-      }
       // put the groupname inside a variable
       $groupname = $_POST["Groupname"];
 

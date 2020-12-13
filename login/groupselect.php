@@ -34,7 +34,7 @@ require('../includes/config.inc.php');
         <?php
         // query every userid in relation with the group
         $userID = $_SESSION['userID'];
-        $query = "SELECT Groupname 
+        $query = "SELECT Groupname, groupDate  
               FROM groups
               WHERE groupID IN (SELECT groupID
                               FROM users
@@ -51,9 +51,10 @@ require('../includes/config.inc.php');
                 <?php echo $row['Groupname'] ?>
               </div>
               <div class="group">
+                <?php echo $row['groupDate'] ?>
                 <?php
-                $groupDate = time();
-                echo  date('D, d M Y - h:i', $groupDate);
+                // $groupDate = time();
+                // echo  date('D, d M Y - h:i', $groupDate);
                 ?>
               </div>
             </div>
@@ -110,7 +111,8 @@ require('../includes/config.inc.php');
     // check if the group name already exists
     if (mysqli_num_rows($testquery) == 0) {
       // insert the group name and id and who made the group
-      $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL)";
+      // $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL, current_timestamp())";
+      $groupQuery = "INSERT INTO groups VALUES ($userID,'$Groupname',NULL, current_timestamp())";
 
       $execute = mysqli_query($mysqli, $groupQuery);
 

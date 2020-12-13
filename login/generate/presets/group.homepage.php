@@ -69,7 +69,7 @@ if ($check == false) {
         <?php
         // query every userid in relation with the group
         $userID = $_SESSION['userID'];
-        $query = "SELECT Eventname
+        $query = "SELECT Eventname, eventDate
                   FROM event
                   INNER JOIN events ON event.eventID = events.eventID
                   INNER JOIN groups ON events.groupID = groups.groupID
@@ -90,10 +90,7 @@ if ($check == false) {
                   <?php echo $row['Eventname'] ?>
                 </div>
                 <div class="event">
-                  <?php
-                  $groupDate = time();
-                  echo  date('D, d M Y - h:i', $groupDate);
-                  ?>
+                  <?php echo $row['eventDate'];   ?>
                 </div>
               </div>
             </a>
@@ -146,7 +143,7 @@ if ($check == false) {
     $EID = $eventID[0];
 
     // insert everu user into users with user id and group id
-    $createEvents = "INSERT INTO events VALUE($EID, $GID)";
+    $createEvents = "INSERT INTO events VALUE($EID, $GID, current_timestamp())";
     $done = mysqli_query($mysqli, $createEvents);
 
     // put the groupname inside a variable

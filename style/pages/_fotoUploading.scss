@@ -18,7 +18,11 @@
       $size: 195px;
       width: $size;
       height: $size;
-      object-fit: contain;
+      object-fit: cover;
+      &:hover {
+        object-fit: contain;
+        filter: brightness(130%);
+      }
     }
   }
 }

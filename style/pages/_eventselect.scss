@@ -16,6 +16,8 @@
         padding: $defPadding;
         margin: 1rem 0;
         background-color: var(--Input-Color);
+        display: flex;
+        justify-content: space-between;
         .event {
           color: var(--text);
         }

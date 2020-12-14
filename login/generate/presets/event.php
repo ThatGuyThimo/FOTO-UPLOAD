@@ -87,8 +87,8 @@ $userID = $_SESSION['userID'];
   </div>
   <main>
     <form class="fotoForm" method="post" enctype="multipart/form-data">
-      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple required>
-      <input class="fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
+      <input class="fotoInput" type="file" name="photo[]" id="photo" multiple required accept=".png, .jpg, .jpeg, .gif, .svg">
+      <input class=" fotoSubmit" type="submit" name="submit" id="submit" value="Upload Foto's">
     </form>
   </main>
   <svg class="BackgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
